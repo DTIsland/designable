@@ -47,7 +47,7 @@ export default {
     react: 'React',
     'react-dom': 'ReactDOM',
     moment: 'moment',
-    antd: 'antd',
+    // antd: 'antd',
   },
   module: {
     rules: [

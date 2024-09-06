@@ -14,6 +14,7 @@
     "experimentalDecorators": true,
     "downlevelIteration": true,
     "baseUrl": ".",
+    "rootDir": "./",
     "paths": {
       "@designable/*": ["./packages/*/src"]
     }

@@ -1,0 +1,281 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.6.4",
+  "deps": {
+    "@babel/parser": "^7.14.7",
+    "@designable/core": "1.0.0-beta.45",
+    "@designable/react": "1.0.0-beta.45",
+    "@designable/shared": "1.0.0-beta.45",
+    "@monaco-editor/react": "^4.6.0",
+    "monaco-editor": "^0.25.2",
+    "prettier": "^2.3.2",
+    "react-color": "^2.19.3",
+    "react-tiny-popover": "^6.0.5",
+    "@formily/antd": "^2.0.2",
+    "@formily/core": "^2.0.2",
+    "@formily/react": "^2.0.2",
+    "@formily/reactive": "^2.0.2",
+    "@formily/reactive-react": "^2.0.2",
+    "@formily/shared": "^2.0.2",
+    "antd": "^4.15.5"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": ".npmignore",
+        "hash": "4557615786500426099"
+      },
+      {
+        "file": "LICENSE.md",
+        "hash": "5315625850549748534"
+      },
+      {
+        "file": "README.md",
+        "hash": "14937089610481389953"
+      },
+      {
+        "file": "copy.ts",
+        "hash": "10458849679335408634"
+      },
+      {
+        "file": "package.json",
+        "hash": "2577333191724525940"
+      },
+      {
+        "file": "rollup.config.js",
+        "hash": "17371155671602268996"
+      },
+      {
+        "file": "src/SchemaField.tsx",
+        "hash": "13535789028482719200"
+      },
+      {
+        "file": "src/SettingsForm.tsx",
+        "hash": "7435212381939961400"
+      },
+      {
+        "file": "src/components/BackgroundStyleSetter/index.tsx",
+        "hash": "2988362521412197919"
+      },
+      {
+        "file": "src/components/BorderRadiusStyleSetter/index.tsx",
+        "hash": "8273969967560042903"
+      },
+      {
+        "file": "src/components/BorderStyleSetter/index.tsx",
+        "hash": "8314989969775889603"
+      },
+      {
+        "file": "src/components/BorderStyleSetter/styles.less",
+        "hash": "11870013558174266968"
+      },
+      {
+        "file": "src/components/BoxShadowStyleSetter/index.tsx",
+        "hash": "3010986333490642235"
+      },
+      {
+        "file": "src/components/BoxStyleSetter/index.tsx",
+        "hash": "9368386050975182370"
+      },
+      {
+        "file": "src/components/CollapseItem/index.tsx",
+        "hash": "6233991820139614322"
+      },
+      {
+        "file": "src/components/CollapseItem/styles.less",
+        "hash": "4738982710202440486"
+      },
+      {
+        "file": "src/components/ColorInput/index.tsx",
+        "hash": "1341715208009731466"
+      },
+      {
+        "file": "src/components/ColorInput/styles.less",
+        "hash": "11379818335983799381"
+      },
+      {
+        "file": "src/components/CornerInput/index.tsx",
+        "hash": "11805458230642851096"
+      },
+      {
+        "file": "src/components/CornerInput/styles.less",
+        "hash": "17877637076947114342"
+      },
+      {
+        "file": "src/components/DisplayStyleSetter/index.tsx",
+        "hash": "9664257552571891864"
+      },
+      {
+        "file": "src/components/DisplayStyleSetter/styles.less",
+        "hash": "6727299404426226152"
+      },
+      {
+        "file": "src/components/DrawerSetter/index.tsx",
+        "hash": "9021715735160983755"
+      },
+      {
+        "file": "src/components/DrawerSetter/styles.less",
+        "hash": "13861177959038269029"
+      },
+      {
+        "file": "src/components/FlexStyleSetter/index.tsx",
+        "hash": "10159502109522335579"
+      },
+      {
+        "file": "src/components/FlexStyleSetter/styles.less",
+        "hash": "14548846554183194308"
+      },
+      {
+        "file": "src/components/FoldItem/index.tsx",
+        "hash": "17208844958729952117"
+      },
+      {
+        "file": "src/components/FoldItem/styles.less",
+        "hash": "13465096881401091490"
+      },
+      {
+        "file": "src/components/FontStyleSetter/index.tsx",
+        "hash": "10098475868612701443"
+      },
+      {
+        "file": "src/components/ImageInput/index.tsx",
+        "hash": "11496881152838388529"
+      },
+      {
+        "file": "src/components/ImageInput/styles.less",
+        "hash": "4986575552248691141"
+      },
+      {
+        "file": "src/components/InputItems/index.tsx",
+        "hash": "15877985235332502865"
+      },
+      {
+        "file": "src/components/InputItems/styles.less",
+        "hash": "11662333933616273771"
+      },
+      {
+        "file": "src/components/MonacoInput/config.ts",
+        "hash": "4724179933652128365"
+      },
+      {
+        "file": "src/components/MonacoInput/format.ts",
+        "hash": "10549133573844254971"
+      },
+      {
+        "file": "src/components/MonacoInput/index.tsx",
+        "hash": "8865532527405412997"
+      },
+      {
+        "file": "src/components/MonacoInput/styles.less",
+        "hash": "15516061587675219627"
+      },
+      {
+        "file": "src/components/MonacoInput/themes/chrome.ts",
+        "hash": "6129389119440215553"
+      },
+      {
+        "file": "src/components/MonacoInput/themes/monokai.ts",
+        "hash": "16205733843375934416"
+      },
+      {
+        "file": "src/components/PolyInput/index.tsx",
+        "hash": "4708135155389184136"
+      },
+      {
+        "file": "src/components/PolyInput/styles.less",
+        "hash": "8278754722127536477"
+      },
+      {
+        "file": "src/components/PositionInput/index.tsx",
+        "hash": "1131141818467953078"
+      },
+      {
+        "file": "src/components/PositionInput/styles.less",
+        "hash": "7500437078412135978"
+      },
+      {
+        "file": "src/components/SizeInput/index.tsx",
+        "hash": "10262900436215907209"
+      },
+      {
+        "file": "src/components/SizeInput/styles.less",
+        "hash": "18022793121558817678"
+      },
+      {
+        "file": "src/components/ValueInput/index.tsx",
+        "hash": "3439139698028079610"
+      },
+      {
+        "file": "src/components/ValueInput/styles.less",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/components/index.ts",
+        "hash": "3884057841602306448"
+      },
+      {
+        "file": "src/effects/index.ts",
+        "hash": "17389561127539540626"
+      },
+      {
+        "file": "src/effects/useLocales.tsx",
+        "hash": "2591999096677330182"
+      },
+      {
+        "file": "src/effects/useSnapshot.tsx",
+        "hash": "8909069764798629871"
+      },
+      {
+        "file": "src/index.ts",
+        "hash": "18250266976092080320"
+      },
+      {
+        "file": "src/locales/en-US.ts",
+        "hash": "3369302940788416271"
+      },
+      {
+        "file": "src/locales/index.ts",
+        "hash": "16923842939300856939"
+      },
+      {
+        "file": "src/locales/ko-KR.ts",
+        "hash": "12363350930439986413"
+      },
+      {
+        "file": "src/locales/zh-CN.ts",
+        "hash": "15793736387153551110"
+      },
+      {
+        "file": "src/registry.ts",
+        "hash": "11997504873429513413"
+      },
+      {
+        "file": "src/shared/context.ts",
+        "hash": "8765620177869582142"
+      },
+      {
+        "file": "src/shared/loadScript.ts",
+        "hash": "6853419403133597736"
+      },
+      {
+        "file": "src/styles.less",
+        "hash": "6502959789571795854"
+      },
+      {
+        "file": "src/types.ts",
+        "hash": "3824779463510157685"
+      },
+      {
+        "file": "tsconfig.build.json",
+        "hash": "17799149305782649084"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "4413921877302185719"
+      }
+    ]
+  }
+}

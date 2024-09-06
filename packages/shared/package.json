@@ -4,6 +4,12 @@
   "license": "MIT",
   "main": "lib",
   "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./esm/index.js",
+      "require": "./lib/index.js"
+    }
+  },
   "engines": {
     "npm": ">=3.0.0"
   },
