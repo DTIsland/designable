@@ -1,4 +1,5 @@
-import loader from '@monaco-editor/loader'
+// import loader from '@monaco-editor/loader'
+import { loader } from '@monaco-editor/react'
 
 const Registry = {
   cdn: '//cdn.jsdelivr.net/npm',
