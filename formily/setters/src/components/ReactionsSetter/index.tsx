@@ -181,7 +181,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
         bodyStyle={{ padding: 10 }}
         transitionName=""
         maskTransitionName=""
-        visible={modalVisible}
+        open={modalVisible}
         onCancel={closeModal}
         destroyOnClose
         onOk={() => {
