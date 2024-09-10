@@ -9,7 +9,9 @@ import * as icons from '../icons'
 
 GlobalRegistry.registerDesignerIcons(icons)
 
-export const Designer: React.FC<IDesignerProps> = (props) => {
+export const Designer: React.FC<React.PropsWithChildren<IDesignerProps>> = (
+  props
+) => {
   const engine = useDesigner()
   const ref = useRef<Engine>()
   useEffect(() => {
