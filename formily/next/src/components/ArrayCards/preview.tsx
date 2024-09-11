@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react'
 import { Card } from '@alifd/next'
 import { CardProps } from '@alifd/next/types/card'
-import { TreeNode, createResource } from '@designable/core'
+import { TreeNode, createResource } from '@didesignable/core'
 import {
   useTreeNode,
   TreeNodeWidget,
   DroppableWidget,
   useNodeIdProps,
   DnFC,
-} from '@designable/react'
+} from '@didesignable/react'
 import { ArrayBase } from '@formily/next'
 import { observer } from '@formily/react'
 import { LoadTemplate } from '../../common/LoadTemplate'

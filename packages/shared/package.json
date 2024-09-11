@@ -1,5 +1,5 @@
 {
-  "name": "@designable/shared",
+  "name": "@didesignable/shared",
   "version": "1.0.0-beta.45",
   "license": "MIT",
   "main": "lib",
@@ -19,7 +19,7 @@
     "url": "git+https://github.com/alibaba/designable.git"
   },
   "bugs": {
-    "url": "https://github.com/alibaba/designable/issues"
+    "url": "https://github.com/alibaba/didesignable/issues"
   },
   "homepage": "https://github.com/alibaba/designable#readme",
   "scripts": {
@@ -32,7 +32,9 @@
     "access": "public"
   },
   "dependencies": {
-    "requestidlecallback": "^0.3.0"
+    "antd": "^5.20.6",
+    "requestidlecallback": "^0.3.0",
+    "rollup-plugin-typescript2": "^0.36.0"
   },
   "gitHead": "bda070c137ba0003cc4451b2208e089d2e326b23"
 }

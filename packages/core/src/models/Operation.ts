@@ -5,7 +5,12 @@ import { Selection } from './Selection'
 import { Hover } from './Hover'
 import { TransformHelper } from './TransformHelper'
 import { MoveHelper } from './MoveHelper'
-import { cancelIdle, ICustomEvent, isFn, requestIdle } from '@designable/shared'
+import {
+  cancelIdle,
+  ICustomEvent,
+  isFn,
+  requestIdle,
+} from '@didesignable/shared'
 
 export interface IOperation {
   tree?: ITreeNode
@@ -54,7 +59,7 @@ export class Operation {
     this.selection.select(this.tree)
   }
 
-  dispatch(event: ICustomEvent, callback?: () => void) {
+  dispatch<T>(event: ICustomEvent, callback?: () => T) {
     if (this.workspace.dispatch(event) === false) return
     if (isFn(callback)) return callback()
   }

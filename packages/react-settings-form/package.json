@@ -1,5 +1,5 @@
 {
-  "name": "@designable/react-settings-form",
+  "name": "@didesignable/react-settings-form",
   "version": "1.0.0-beta.45",
   "license": "MIT",
   "main": "lib",
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/alibaba/designable.git"
   },
   "bugs": {
-    "url": "https://github.com/alibaba/designable/issues"
+    "url": "https://github.com/alibaba/didesignable/issues"
   },
   "homepage": "https://github.com/alibaba/designable#readme",
   "scripts": {
@@ -23,28 +23,27 @@
     "build:umd": "rollup --config"
   },
   "peerDependencies": {
-    "@formily/antd": "^2.0.2",
     "@formily/core": "^2.0.2",
     "@formily/react": "^2.0.2",
     "@formily/reactive": "^2.0.2",
     "@formily/reactive-react": "^2.0.2",
     "@formily/shared": "^2.0.2",
-    "antd": "^4.0.0"
+    "antd": "^5.20.6"
   },
   "devDependencies": {
-    "@formily/antd": "^2.0.2",
-    "@formily/core": "^2.0.2",
-    "@formily/react": "^2.0.2",
-    "@formily/reactive": "^2.0.2",
-    "@formily/reactive-react": "^2.0.2",
-    "@formily/shared": "^2.0.2",
-    "antd": "^4.15.5"
+    "@formily/antd-v5": "^1.2.3",
+    "@formily/core": "^2.3.2",
+    "@formily/react": "^2.3.2",
+    "@formily/reactive": "^2.3.2",
+    "@formily/reactive-react": "^2.3.2",
+    "@formily/shared": "^2.3.2",
+    "antd": "^5.20.6"
   },
   "dependencies": {
     "@babel/parser": "^7.14.7",
-    "@designable/core": "1.0.0-beta.45",
-    "@designable/react": "1.0.0-beta.45",
-    "@designable/shared": "1.0.0-beta.45",
+    "@didesignable/core": "1.0.0-beta.45",
+    "@didesignable/react": "1.0.0-beta.45",
+    "@didesignable/shared": "1.0.0-beta.45",
     "@monaco-editor/react": "^4.6.0",
     "monaco-editor": "^0.25.2",
     "prettier": "^2.3.2",

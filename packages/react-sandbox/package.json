@@ -1,5 +1,5 @@
 {
-  "name": "@designable/react-sandbox",
+  "name": "@didesignable/react-sandbox",
   "version": "1.0.0-beta.45",
   "license": "MIT",
   "main": "lib",
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/alibaba/designable.git"
   },
   "bugs": {
-    "url": "https://github.com/alibaba/designable/issues"
+    "url": "https://github.com/alibaba/didesignable/issues"
   },
   "homepage": "https://github.com/alibaba/designable#readme",
   "scripts": {
@@ -26,8 +26,8 @@
     "react": "16.x || 17.x"
   },
   "dependencies": {
-    "@designable/react": "1.0.0-beta.45",
-    "@designable/shared": "1.0.0-beta.45"
+    "@didesignable/react": "1.0.0-beta.45",
+    "@didesignable/shared": "1.0.0-beta.45"
   },
   "publishConfig": {
     "access": "public"

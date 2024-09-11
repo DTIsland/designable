@@ -1,5 +1,5 @@
-import { AppendNodeEvent, TreeNode } from '@designable/core'
-import { useDesigner } from '@designable/react'
+import { AppendNodeEvent, TreeNode } from '@didesignable/core'
+import { useDesigner } from '@didesignable/react'
 import { matchComponent, matchChildComponent } from '../shared'
 
 export const useDropTemplate = (

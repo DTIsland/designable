@@ -1,0 +1,8 @@
+:root {
+  --border-color-split: #d9d9d9;
+  --component-background: #dfdfdf;
+  --border-color-base: #d9d9d9;
+  --text-color-secondary: var(--dn-gray-light);
+  --primary-color: var(--dn-brand-color);
+  --text-color: var(--dn-gray);
+}

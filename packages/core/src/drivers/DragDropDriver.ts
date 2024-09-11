@@ -1,4 +1,4 @@
-import { EventDriver } from '@designable/shared'
+import { EventDriver } from '@didesignable/shared'
 import { Engine } from '../models/Engine'
 import { DragStartEvent, DragMoveEvent, DragStopEvent } from '../events'
 

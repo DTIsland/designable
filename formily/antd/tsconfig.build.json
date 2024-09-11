@@ -2,9 +2,14 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./lib",
+    "baseUrl": ".",
+    "rootDir": "./src",
     "paths": {
-      "@designable/*": ["../../packages/*", "../../formily/*"]
+      "@didesignable/*": ["../../packages/*", "../../formily/*"]
     },
-    "declaration": true
-  }
+    "declaration": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true
+  },
+  "exclude": ["lib", "esm", "dist", "node_modules"]
 }

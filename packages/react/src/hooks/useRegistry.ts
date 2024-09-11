@@ -1,5 +1,5 @@
-import { GlobalRegistry, IDesignerRegistry } from '@designable/core'
-import { globalThisPolyfill } from '@designable/shared'
+import { GlobalRegistry, IDesignerRegistry } from '@didesignable/core'
+import { globalThisPolyfill } from '@didesignable/shared'
 
 export const useRegistry = (): IDesignerRegistry => {
   return globalThisPolyfill['__DESIGNER_REGISTRY__'] || GlobalRegistry

@@ -3,7 +3,7 @@
   "compilerOptions": {
     "jsx": "react",
     "paths": {
-      "@designable/*": ["./packages/*/src"]
+      "@didesignable/*": ["./packages/*/src"]
     }
   },
   "exclude": ["./packages/*/esm", "./packages/*/lib"]

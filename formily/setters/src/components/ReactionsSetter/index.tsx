@@ -2,10 +2,10 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { clone, uid } from '@formily/shared'
 import { createForm, isVoidField } from '@formily/core'
 import { createSchemaField } from '@formily/react'
-import { GlobalRegistry } from '@designable/core'
-import { requestIdle } from '@designable/shared'
-import { usePrefix, TextWidget } from '@designable/react'
-import { MonacoInput } from '@designable/react-settings-form'
+import { GlobalRegistry } from '@didesignable/core'
+import { requestIdle } from '@didesignable/shared'
+import { usePrefix, TextWidget } from '@didesignable/react'
+import { MonacoInput } from '@didesignable/react-settings-form'
 import {
   Form,
   ArrayTable,
@@ -13,7 +13,7 @@ import {
   Select,
   FormItem,
   FormCollapse,
-} from '@formily/antd'
+} from '@formily/antd-v5'
 import { Modal, Card, Button, Tag, Tooltip } from 'antd'
 import { PathSelector } from './PathSelector'
 import { FieldPropertySetter } from './FieldPropertySetter'

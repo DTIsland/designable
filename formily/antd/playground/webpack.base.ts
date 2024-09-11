@@ -5,6 +5,16 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import autoprefixer from 'autoprefixer'
 //import { getThemeVariables } from 'antd/dist/theme'
 
+// const { theme } = require('antd/lib');
+// const { convertLegacyToken } = require('@ant-design/compatible');
+
+// const { defaultAlgorithm, defaultSeed } = theme;
+
+// const mapV5Token = defaultAlgorithm(defaultSeed);
+// const v5Vars = convertLegacyToken(mapV5Token);
+// const mapV4Token = theme.getDesignToken(defaultTheme);
+// const v4Vars = convertLegacyToken(mapV4Token);
+
 const getWorkspaceAlias = () => {
   const basePath = path.resolve(__dirname, '../../../')
   const pkg = fs.readJSONSync(path.resolve(basePath, 'package.json')) || {}
@@ -44,9 +54,9 @@ export default {
     alias: getWorkspaceAlias(),
   },
   externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-    moment: 'moment',
+    // react: 'React',
+    // 'react-dom': 'ReactDOM',
+    // moment: 'moment',
     // antd: 'antd',
   },
   module: {
@@ -83,6 +93,9 @@ export default {
               // modifyVars: getThemeVariables({
               //   dark: true, // 开启暗黑模式
               // }),
+              // lessOptions: {
+              //   modifyVars: v5Vars, // or v4Vars
+              // },
               javascriptEnabled: true,
             },
           },

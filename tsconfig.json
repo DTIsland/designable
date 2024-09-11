@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "rootDir": "./",
     "paths": {
-      "@designable/*": ["./packages/*/src"]
+      "@didesignable/*": ["./packages/*/src"]
     }
   }
 }

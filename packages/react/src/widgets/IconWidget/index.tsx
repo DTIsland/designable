@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useRef } from 'react'
-import { isStr, isFn, isObj, isPlainObj } from '@designable/shared'
+import { isStr, isFn, isObj, isPlainObj } from '@didesignable/shared'
 import { observer } from '@formily/reactive-react'
 import { Tooltip, TooltipProps } from 'antd'
 import { usePrefix, useRegistry, useTheme } from '../../hooks'
@@ -57,7 +57,7 @@ export const IconWidget: React.FC<IIconWidgetProps> & {
           viewBox: infer.props.viewBox || '0 0 1024 1024',
           focusable: 'false',
           'aria-hidden': 'true',
-        })
+        } as any)
       } else if (infer.type === 'path' || infer.type === 'g') {
         return (
           <svg

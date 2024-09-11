@@ -7,9 +7,9 @@ import {
   Schema,
   ISchema,
 } from '@formily/react'
-import { GlobalRegistry } from '@designable/core'
-import { ArrayItems } from '@formily/antd'
-import { FoldItem } from '@designable/react-settings-form'
+import { GlobalRegistry } from '@didesignable/core'
+import { ArrayItems } from '@formily/antd-v5'
+import { FoldItem } from '@didesignable/react-settings-form'
 import { Select } from 'antd'
 
 export interface IValidatorSetterProps {

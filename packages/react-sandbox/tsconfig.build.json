@@ -2,9 +2,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./lib",
+    "rootDir": "./src",
     "paths": {
-      "@designable/*": ["../*"]
+      "@didesignable/*": ["../*"]
     },
+    "skipLibCheck": true,
     "declaration": true
   }
 }
