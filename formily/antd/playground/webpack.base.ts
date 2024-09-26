@@ -3,17 +3,6 @@ import fs from 'fs-extra'
 import { GlobSync } from 'glob'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import autoprefixer from 'autoprefixer'
-//import { getThemeVariables } from 'antd/dist/theme'
-
-// const { theme } = require('antd/lib');
-// const { convertLegacyToken } = require('@ant-design/compatible');
-
-// const { defaultAlgorithm, defaultSeed } = theme;
-
-// const mapV5Token = defaultAlgorithm(defaultSeed);
-// const v5Vars = convertLegacyToken(mapV5Token);
-// const mapV4Token = theme.getDesignToken(defaultTheme);
-// const v4Vars = convertLegacyToken(mapV4Token);
 
 const getWorkspaceAlias = () => {
   const basePath = path.resolve(__dirname, '../../../')
@@ -54,10 +43,8 @@ export default {
     alias: getWorkspaceAlias(),
   },
   externals: {
-    // react: 'React',
-    // 'react-dom': 'ReactDOM',
-    // moment: 'moment',
-    // antd: 'antd',
+    react: 'React',
+    'react-dom': 'ReactDOM',
   },
   module: {
     rules: [
