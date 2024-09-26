@@ -67,7 +67,15 @@ import {
 } from '../src'
 
 import dayjs from 'dayjs'
-import { Button, ConfigProvider, Dropdown, MenuProps, Row } from 'antd'
+import {
+  Button,
+  Col,
+  ConfigProvider,
+  Dropdown,
+  MenuProps,
+  Row,
+  Tabs,
+} from 'antd'
 
 setNpmCDNRegistry('//unpkg.com')
 
@@ -125,6 +133,21 @@ const App = () => {
       }),
     []
   )
+
+  const tabItems = [
+    {
+      label: '属性',
+      key: '1',
+      children: (
+        <SettingsForm uploadAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" />
+      ),
+    },
+    {
+      key: '2',
+      label: '事件',
+      children: 'Content of Tab Pane 2',
+    },
+  ]
 
   return (
     <ConfigProvider
@@ -262,9 +285,43 @@ const App = () => {
                 </ViewportPanel>
               </WorkspacePanel>
             </Workspace>
-            <SettingsPanel title="panels.PropertySettings">
-              <SettingsForm uploadAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" />
-            </SettingsPanel>
+            <div
+              style={{
+                // flex-grow: 0;
+                // flex-shrink: 0;
+                // position: relative;
+                // display: flex;
+                // flex-direction: column;
+                // z-index: 2;
+                // width: 300px;
+                // background: var(--dn-composite-panel-tabs-content-bg-color);
+                // border-left: 1px solid var(--dn-panel-border-color);
+                // height: 100%;
+                // box-sizing: content-box;
+                // -webkit-user-select: none;
+                // -moz-user-select: none;
+                // user-select: none;
+                // transform to react style
+                width: '300px',
+                background: 'var(--dn-composite-panel-tabs-content-bg-color)',
+                borderLeft: '1px solid var(--dn-panel-border-color)',
+                height: '100%',
+                boxSizing: 'content-box',
+                WebkitUserSelect: 'none',
+                MozUserSelect: 'none',
+                userSelect: 'none',
+                zIndex: 2,
+                display: 'flex',
+                flexDirection: 'column',
+                flexGrow: 0,
+                flexShrink: 0,
+                position: 'relative',
+              }}
+            >
+              <Tabs items={tabItems} />
+            </div>
+            {/* <SettingsPanel title="panels.PropertySettings">
+            </SettingsPanel> */}
           </Row>
         </StudioPanel>
       </Designer>
