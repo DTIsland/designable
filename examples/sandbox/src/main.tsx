@@ -16,18 +16,18 @@ import {
   ViewportPanel,
   SettingsPanel,
   HistoryWidget,
-} from '@designable/react'
-import { SettingsForm, MonacoInput } from '@designable/react-settings-form'
+} from '@didesignable/react'
+import { SettingsForm, MonacoInput } from '@didesignable/react-settings-form'
 import { observer } from '@formily/react'
 import {
   createDesigner,
   createResource,
   createBehavior,
   GlobalRegistry,
-} from '@designable/core'
+} from '@didesignable/core'
 import { Space, Button, Radio } from 'antd'
 import { GithubOutlined } from '@ant-design/icons'
-import { Sandbox } from '@designable/react-sandbox'
+import { Sandbox } from '@didesignable/react-sandbox'
 import 'antd/dist/antd.less'
 
 const RootBehavior = createBehavior({

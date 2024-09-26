@@ -7,6 +7,7 @@
       "@didesignable/*": ["../*"]
     },
     "skipLibCheck": true,
+    "checkJs": false,
     "declaration": true
   }
 }

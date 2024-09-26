@@ -1,3 +1,4 @@
+import { debounce } from 'lodash'
 export class LayoutObserver {
   private resizeObserver: ResizeObserver
 
@@ -8,7 +9,7 @@ export class LayoutObserver {
   private connected = false
 
   constructor(observer: () => void = () => {}) {
-    this.resizeObserver = new ResizeObserver(() => observer())
+    this.resizeObserver = new ResizeObserver(debounce(() => observer(), 500))
     this.performanceObserver = new PerformanceObserver(() => {
       observer()
     })

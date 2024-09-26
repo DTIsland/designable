@@ -29,7 +29,7 @@
   "peerDependencies": {
     "@formily/reactive": "^2.0.2",
     "@formily/reactive-react": "^2.0.2",
-    "antd": "^4.15.4",
+    "antd": "^5.20.6",
     "react": "16.x || 17.x"
   },
   "dependencies": {

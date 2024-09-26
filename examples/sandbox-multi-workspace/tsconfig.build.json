@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "./lib",
     "paths": {
-      "@designable/*": ["../*"]
+      "@didesignable/*": ["../*"]
     },
     "declaration": true
   }

@@ -3,13 +3,14 @@ import { Engine } from '../models/Engine'
 import { ViewportResizeEvent } from '../events'
 import { ResizeObserver } from '@juggle/resize-observer'
 import { globalThisPolyfill } from '@didesignable/shared'
+import { debounce } from 'lodash'
 
 export class ViewportResizeDriver extends EventDriver<Engine> {
   request = null
 
   resizeObserver: ResizeObserver = null
 
-  onResize = (e: any) => {
+  onResize = debounce((e: any) => {
     if (e.preventDefault) e.preventDefault()
     this.request = requestAnimationFrame(() => {
       cancelAnimationFrame(this.request)
@@ -26,7 +27,7 @@ export class ViewportResizeDriver extends EventDriver<Engine> {
         })
       )
     })
-  }
+  }, 500)
 
   attach() {
     if (this.contentWindow && this.contentWindow !== globalThisPolyfill) {

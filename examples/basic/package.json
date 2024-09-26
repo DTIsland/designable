@@ -1,5 +1,5 @@
 {
-  "name": "@designable/basic-example",
+  "name": "@didesignable/basic-example",
   "version": "1.0.0-beta.45",
   "license": "MIT",
   "private": true,
@@ -25,11 +25,11 @@
     "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
-    "@designable/core": "1.0.0-beta.45",
-    "@designable/react": "1.0.0-beta.45",
-    "@designable/react-sandbox": "1.0.0-beta.45",
-    "@designable/react-settings-form": "1.0.0-beta.45",
-    "@designable/shared": "1.0.0-beta.45",
+    "@didesignable/core": "1.0.0-beta.45",
+    "@didesignable/react": "1.0.0-beta.45",
+    "@didesignable/react-sandbox": "1.0.0-beta.45",
+    "@didesignable/react-settings-form": "1.0.0-beta.45",
+    "@didesignable/shared": "1.0.0-beta.45",
     "@formily/reactive": "^2.0.2",
     "@formily/reactive-react": "^2.0.2",
     "antd": "^4.15.2",
