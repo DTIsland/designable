@@ -11,6 +11,8 @@ import { usePrefix } from '../../hooks'
 import { IconWidget } from '../IconWidget'
 import cls from 'classnames'
 import './styles.less'
+import { Tooltip } from 'antd'
+import { TextWidget } from '../TextWidget'
 
 export type SimpleSourceMapper = (resource: IResource) => React.ReactChild
 
@@ -23,27 +25,35 @@ export interface ISimpleResourceWidgetProps {
 export const SimpleResourceWidget: React.FC<ISimpleResourceWidgetProps> =
   observer((props) => {
     const prefix = usePrefix('simple-resource')
-    const renderNode = (source: IResource) => {
-      const { node, icon, title, thumb, span } = source
+    const renderNode = (source: IResource & { showTitle: boolean }) => {
+      const { node, icon, title, thumb, span, showTitle = true } = source
+      const titleTxt = title || node.children[0]?.getMessage('title')
       return (
-        <div
-          className={prefix + '-item'}
-          style={{ gridColumnStart: `span ${span || 1}` }}
-          key={node.id}
-          data-designer-source-id={node.id}
-        >
-          {thumb && <img className={prefix + '-item-thumb'} src={thumb} />}
-          {icon && React.isValidElement(icon) ? (
-            <>{icon}</>
-          ) : (
-            <IconWidget
-              title={title || node.children[0]?.getMessage('title')}
-              className={prefix + '-item-icon'}
-              infer={icon}
-              style={{ width: 24, height: 24, color: 'red' }}
-            />
-          )}
-        </div>
+        <Tooltip title={titleTxt}>
+          <div
+            className={prefix + '-item'}
+            style={{ gridColumnStart: `span ${span || 1}` }}
+            key={node.id}
+            data-designer-source-id={node.id}
+          >
+            {thumb && <img className={prefix + '-item-thumb'} src={thumb} />}
+            {icon && React.isValidElement(icon) ? (
+              <>{icon}</>
+            ) : (
+              <IconWidget
+                title={titleTxt}
+                className={prefix + '-item-icon'}
+                infer={icon}
+                style={{ width: 24, height: 24, color: 'red' }}
+              />
+            )}
+            {showTitle ? (
+              <span className={prefix + '-item-text'}>
+                {<TextWidget>{titleTxt}</TextWidget>}
+              </span>
+            ) : null}
+          </div>
+        </Tooltip>
       )
     }
     const sources = props.sources.reduce<IResource[]>((buf, source) => {

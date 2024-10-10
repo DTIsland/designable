@@ -14,7 +14,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 20px;
   }
 
   &-item {
@@ -22,6 +22,7 @@
     user-select: none;
     background: var(--dn-resource-content-bg-color);
     min-height: 40px;
+    min-width: 40px;
     color: var(--dn-resource-item-color);
     display: flex;
     align-items: center;
@@ -29,10 +30,16 @@
     flex-direction: column;
     cursor: grab;
     transition: color 0.1s ease-out;
+    gap: 8px;
+
+    &-text {
+      color: inherit;
+      font-size: 12px;
+    }
 
     &:hover {
-      color: var(--dn-resource-item-hover-color);
       z-index: 1;
+      color: var(--ant-color-primary);
     }
 
     &-icon {
