@@ -32,7 +32,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "bda070c137ba0003cc4451b2208e089d2e326b23",
+  "gitHead": "47e2152bc7f541f933f6d2120837bb5f943aeef7",
   "devDependencies": {
     "typescript": "5.6.2"
   }
