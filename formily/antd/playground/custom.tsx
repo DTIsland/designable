@@ -62,7 +62,7 @@ import {
 import dayjs from 'dayjs'
 import { ConfigProvider, Dropdown, Row, Tabs } from 'antd'
 
-setNpmCDNRegistry('//unpkg.com')
+// setNpmCDNRegistry('//unpkg.com')
 
 import '../src/theme.css'
 import 'dayjs/locale/zh-cn'

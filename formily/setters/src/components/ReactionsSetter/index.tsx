@@ -3,7 +3,6 @@ import { clone, uid } from '@formily/shared'
 import { createForm, isVoidField } from '@formily/core'
 import { createSchemaField } from '@formily/react'
 import { GlobalRegistry } from '@didesignable/core'
-import { requestIdle } from '@didesignable/shared'
 import { usePrefix, TextWidget } from '@didesignable/react'
 import { MonacoInput } from '@didesignable/react-settings-form'
 import {
@@ -19,8 +18,8 @@ import { PathSelector } from './PathSelector'
 import { FieldPropertySetter } from './FieldPropertySetter'
 import { FulfillRunHelper } from './helpers'
 import { IReaction } from './types'
-import { initDeclaration } from './declarations'
 import './styles.less'
+import { initDeclaration } from './declarations'
 
 export interface IReactionsSetterProps {
   value?: IReaction
@@ -138,7 +137,7 @@ const FieldStateValueTypes = {
 
 export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
   const [modalVisible, setModalVisible] = useState(false)
-  const [innerVisible, setInnerVisible] = useState(false)
+  // const [innerVisible, setInnerVisible] = useState(false)
   const prefix = usePrefix('reactions-setter')
   const form = useMemo(() => {
     return createForm({
@@ -153,18 +152,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
   const closeModal = () => setModalVisible(false)
   useEffect(() => {
     if (modalVisible) {
-      requestIdle(
-        () => {
-          initDeclaration().then(() => {
-            setInnerVisible(true)
-          })
-        },
-        {
-          timeout: 400,
-        }
-      )
-    } else {
-      setInnerVisible(false)
+      initDeclaration()
     }
   }, [modalVisible])
   return (
@@ -196,231 +184,229 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
         }}
       >
         <div className={prefix}>
-          {innerVisible && (
-            <Form form={form}>
-              <SchemaField>
+          <Form form={form}>
+            <SchemaField>
+              <SchemaField.Void
+                x-component="FormCollapse"
+                x-component-props={{
+                  formCollapse,
+                  defaultActiveKey: ['deps', 'state'],
+                  style: { marginBottom: 10 },
+                }}
+              >
                 <SchemaField.Void
-                  x-component="FormCollapse"
+                  x-component="FormCollapse.CollapsePanel"
                   x-component-props={{
-                    formCollapse,
-                    defaultActiveKey: ['deps', 'state'],
-                    style: { marginBottom: 10 },
+                    key: 'deps',
+                    header: GlobalRegistry.getDesignerMessage(
+                      'SettingComponents.ReactionsSetter.relationsFields'
+                    ),
                   }}
                 >
-                  <SchemaField.Void
-                    x-component="FormCollapse.CollapsePanel"
-                    x-component-props={{
-                      key: 'deps',
-                      header: GlobalRegistry.getDesignerMessage(
-                        'SettingComponents.ReactionsSetter.relationsFields'
-                      ),
-                    }}
+                  <SchemaField.Array
+                    name="dependencies"
+                    default={[{}]}
+                    x-component="ArrayTable"
                   >
-                    <SchemaField.Array
-                      name="dependencies"
-                      default={[{}]}
-                      x-component="ArrayTable"
-                    >
-                      <SchemaField.Object>
-                        <SchemaField.Void
-                          x-component="ArrayTable.Column"
+                    <SchemaField.Object>
+                      <SchemaField.Void
+                        x-component="ArrayTable.Column"
+                        x-component-props={{
+                          title: GlobalRegistry.getDesignerMessage(
+                            'SettingComponents.ReactionsSetter.sourceField'
+                          ),
+                          width: 240,
+                        }}
+                      >
+                        <SchemaField.String
+                          name="source"
+                          x-decorator="FormItem"
+                          x-component="PathSelector"
                           x-component-props={{
-                            title: GlobalRegistry.getDesignerMessage(
-                              'SettingComponents.ReactionsSetter.sourceField'
+                            placeholder: GlobalRegistry.getDesignerMessage(
+                              'SettingComponents.ReactionsSetter.pleaseSelect'
                             ),
-                            width: 240,
                           }}
-                        >
-                          <SchemaField.String
-                            name="source"
-                            x-decorator="FormItem"
-                            x-component="PathSelector"
-                            x-component-props={{
-                              placeholder: GlobalRegistry.getDesignerMessage(
-                                'SettingComponents.ReactionsSetter.pleaseSelect'
-                              ),
-                            }}
-                          />
-                        </SchemaField.Void>
-                        <SchemaField.Void
-                          x-component="ArrayTable.Column"
+                        />
+                      </SchemaField.Void>
+                      <SchemaField.Void
+                        x-component="ArrayTable.Column"
+                        x-component-props={{
+                          title: GlobalRegistry.getDesignerMessage(
+                            'SettingComponents.ReactionsSetter.sourceProperty'
+                          ),
+                          width: 200,
+                        }}
+                      >
+                        <SchemaField.String
+                          name="property"
+                          default="value"
+                          x-decorator="FormItem"
+                          x-component="Select"
+                          x-component-props={{ showSearch: true }}
+                          enum={FieldStateProperties}
+                        />
+                      </SchemaField.Void>
+                      <SchemaField.Void
+                        x-component="ArrayTable.Column"
+                        x-component-props={{
+                          title: GlobalRegistry.getDesignerMessage(
+                            'SettingComponents.ReactionsSetter.variableName'
+                          ),
+                          width: 200,
+                        }}
+                      >
+                        <SchemaField.String
+                          name="name"
+                          x-decorator="FormItem"
+                          x-validator={{
+                            pattern: /^[$_a-zA-Z]+[$_a-zA-Z0-9]*$/,
+                            message: GlobalRegistry.getDesignerMessage(
+                              'SettingComponents.ReactionsSetter.variableNameValidateMessage'
+                            ),
+                          }}
+                          x-component="Input"
                           x-component-props={{
-                            title: GlobalRegistry.getDesignerMessage(
-                              'SettingComponents.ReactionsSetter.sourceProperty'
+                            addonBefore: '$deps.',
+                            placeholder: GlobalRegistry.getDesignerMessage(
+                              'SettingComponents.ReactionsSetter.pleaseInput'
                             ),
-                            width: 200,
                           }}
-                        >
-                          <SchemaField.String
-                            name="property"
-                            default="value"
-                            x-decorator="FormItem"
-                            x-component="Select"
-                            x-component-props={{ showSearch: true }}
-                            enum={FieldStateProperties}
-                          />
-                        </SchemaField.Void>
-                        <SchemaField.Void
-                          x-component="ArrayTable.Column"
-                          x-component-props={{
-                            title: GlobalRegistry.getDesignerMessage(
-                              'SettingComponents.ReactionsSetter.variableName'
-                            ),
-                            width: 200,
+                          x-reactions={(field) => {
+                            if (isVoidField(field)) return
+                            field.query('.source').take((source) => {
+                              if (isVoidField(source)) return
+                              if (
+                                source.value &&
+                                !field.value &&
+                                !field.modified
+                              ) {
+                                field.value =
+                                  source.inputValues[1]?.props?.name ||
+                                  `v_${uid()}`
+                              }
+                            })
                           }}
-                        >
-                          <SchemaField.String
-                            name="name"
-                            x-decorator="FormItem"
-                            x-validator={{
-                              pattern: /^[$_a-zA-Z]+[$_a-zA-Z0-9]*$/,
-                              message: GlobalRegistry.getDesignerMessage(
-                                'SettingComponents.ReactionsSetter.variableNameValidateMessage'
-                              ),
-                            }}
-                            x-component="Input"
-                            x-component-props={{
-                              addonBefore: '$deps.',
-                              placeholder: GlobalRegistry.getDesignerMessage(
-                                'SettingComponents.ReactionsSetter.pleaseInput'
-                              ),
-                            }}
-                            x-reactions={(field) => {
-                              if (isVoidField(field)) return
-                              field.query('.source').take((source) => {
-                                if (isVoidField(source)) return
+                        />
+                      </SchemaField.Void>
+
+                      <SchemaField.Void
+                        x-component="ArrayTable.Column"
+                        x-component-props={{
+                          title: GlobalRegistry.getDesignerMessage(
+                            'SettingComponents.ReactionsSetter.variableType'
+                          ),
+                          ellipsis: {
+                            showTitle: false,
+                          },
+                          width: 200,
+                          align: 'center',
+                        }}
+                      >
+                        <SchemaField.String
+                          name="type"
+                          default="any"
+                          x-decorator="FormItem"
+                          x-component="TypeView"
+                          x-reactions={(field) => {
+                            if (isVoidField(field)) return
+                            const property = field
+                              .query('.property')
+                              .get('inputValues')
+                            if (!property) return
+                            property[0] = property[0] || 'value'
+                            field.query('.source').take((source) => {
+                              if (isVoidField(source)) return
+                              if (source.value) {
                                 if (
-                                  source.value &&
-                                  !field.value &&
-                                  !field.modified
+                                  property[0] === 'value' ||
+                                  property[0] === 'initialValue' ||
+                                  property[0] === 'inputValue'
                                 ) {
                                   field.value =
-                                    source.inputValues[1]?.props?.name ||
-                                    `v_${uid()}`
+                                    source.inputValues[1]?.props?.type || 'any'
+                                } else if (property[0] === 'inputValues') {
+                                  field.value = `any[]`
+                                } else if (property[0]) {
+                                  field.value =
+                                    FieldStateValueTypes[property[0]]
+                                } else {
+                                  field.value = 'any'
                                 }
-                              })
-                            }}
-                          />
-                        </SchemaField.Void>
-
-                        <SchemaField.Void
-                          x-component="ArrayTable.Column"
-                          x-component-props={{
-                            title: GlobalRegistry.getDesignerMessage(
-                              'SettingComponents.ReactionsSetter.variableType'
-                            ),
-                            ellipsis: {
-                              showTitle: false,
-                            },
-                            width: 200,
-                            align: 'center',
+                              }
+                            })
                           }}
-                        >
-                          <SchemaField.String
-                            name="type"
-                            default="any"
-                            x-decorator="FormItem"
-                            x-component="TypeView"
-                            x-reactions={(field) => {
-                              if (isVoidField(field)) return
-                              const property = field
-                                .query('.property')
-                                .get('inputValues')
-                              if (!property) return
-                              property[0] = property[0] || 'value'
-                              field.query('.source').take((source) => {
-                                if (isVoidField(source)) return
-                                if (source.value) {
-                                  if (
-                                    property[0] === 'value' ||
-                                    property[0] === 'initialValue' ||
-                                    property[0] === 'inputValue'
-                                  ) {
-                                    field.value =
-                                      source.inputValues[1]?.props?.type ||
-                                      'any'
-                                  } else if (property[0] === 'inputValues') {
-                                    field.value = `any[]`
-                                  } else if (property[0]) {
-                                    field.value =
-                                      FieldStateValueTypes[property[0]]
-                                  } else {
-                                    field.value = 'any'
-                                  }
-                                }
-                              })
-                            }}
-                          />
-                        </SchemaField.Void>
-                        <SchemaField.Void
-                          x-component="ArrayTable.Column"
-                          x-component-props={{
-                            title: GlobalRegistry.getDesignerMessage(
-                              'SettingComponents.ReactionsSetter.operations'
-                            ),
-                            align: 'center',
-                            width: 80,
-                          }}
-                        >
-                          <SchemaField.Markup
-                            type="void"
-                            x-component="ArrayTable.Remove"
-                          />
-                        </SchemaField.Void>
-                      </SchemaField.Object>
+                        />
+                      </SchemaField.Void>
                       <SchemaField.Void
-                        title={GlobalRegistry.getDesignerMessage(
-                          'SettingComponents.ReactionsSetter.addRelationField'
-                        )}
-                        x-component="ArrayTable.Addition"
-                        x-component-props={{ style: { marginTop: 8 } }}
-                      />
-                    </SchemaField.Array>
-                  </SchemaField.Void>
-
-                  <SchemaField.Void
-                    x-component="FormCollapse.CollapsePanel"
-                    x-component-props={{
-                      header: GlobalRegistry.getDesignerMessage(
-                        'SettingComponents.ReactionsSetter.propertyReactions'
-                      ),
-                      key: 'state',
-                      className: 'reaction-state',
-                    }}
-                  >
-                    <SchemaField.Markup
-                      name="fulfill.state"
-                      x-component="FieldPropertySetter"
+                        x-component="ArrayTable.Column"
+                        x-component-props={{
+                          title: GlobalRegistry.getDesignerMessage(
+                            'SettingComponents.ReactionsSetter.operations'
+                          ),
+                          align: 'center',
+                          width: 80,
+                        }}
+                      >
+                        <SchemaField.Markup
+                          type="void"
+                          x-component="ArrayTable.Remove"
+                        />
+                      </SchemaField.Void>
+                    </SchemaField.Object>
+                    <SchemaField.Void
+                      title={GlobalRegistry.getDesignerMessage(
+                        'SettingComponents.ReactionsSetter.addRelationField'
+                      )}
+                      x-component="ArrayTable.Addition"
+                      x-component-props={{ style: { marginTop: 8 } }}
                     />
-                  </SchemaField.Void>
-                  <SchemaField.Void
-                    x-component="FormCollapse.CollapsePanel"
+                  </SchemaField.Array>
+                </SchemaField.Void>
+
+                <SchemaField.Void
+                  x-component="FormCollapse.CollapsePanel"
+                  x-component-props={{
+                    header: GlobalRegistry.getDesignerMessage(
+                      'SettingComponents.ReactionsSetter.propertyReactions'
+                    ),
+                    key: 'state',
+                    className: 'reaction-state',
+                  }}
+                >
+                  <SchemaField.Markup
+                    name="fulfill.state"
+                    x-component="FieldPropertySetter"
+                  />
+                </SchemaField.Void>
+                <SchemaField.Void
+                  x-component="FormCollapse.CollapsePanel"
+                  x-component-props={{
+                    key: 'run',
+                    header: GlobalRegistry.getDesignerMessage(
+                      'SettingComponents.ReactionsSetter.actionReactions'
+                    ),
+                    className: 'reaction-runner',
+                  }}
+                >
+                  <SchemaField.String
+                    name="fulfill.run"
+                    x-component="MonacoInput"
                     x-component-props={{
-                      key: 'run',
-                      header: GlobalRegistry.getDesignerMessage(
-                        'SettingComponents.ReactionsSetter.actionReactions'
-                      ),
-                      className: 'reaction-runner',
-                    }}
-                  >
-                    <SchemaField.String
-                      name="fulfill.run"
-                      x-component="MonacoInput"
-                      x-component-props={{
-                        width: '100%',
-                        height: 400,
-                        language: 'typescript',
-                        helpCode: FulfillRunHelper,
-                        options: {
-                          minimap: {
-                            enabled: false,
-                          },
+                      width: '100%',
+                      height: 400,
+                      language: 'typescript',
+                      helpCode: FulfillRunHelper,
+                      options: {
+                        minimap: {
+                          enabled: false,
                         },
-                      }}
-                      x-reactions={(field) => {
-                        const deps = field.query('dependencies').value()
-                        if (Array.isArray(deps)) {
-                          field.componentProps.extraLib = `
+                      },
+                    }}
+                    x-reactions={(field) => {
+                      const deps = field.query('dependencies').value()
+                      if (Array.isArray(deps)) {
+                        field.componentProps.extraLib = `
                           declare var $deps : {
                             ${deps.map(({ name, type }) => {
                               if (!name) return ''
@@ -428,14 +414,13 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                             })}
                           }
                           `
-                        }
-                      }}
-                    />
-                  </SchemaField.Void>
+                      }
+                    }}
+                  />
                 </SchemaField.Void>
-              </SchemaField>
-            </Form>
-          )}
+              </SchemaField.Void>
+            </SchemaField>
+          </Form>
         </div>
       </Modal>
     </>

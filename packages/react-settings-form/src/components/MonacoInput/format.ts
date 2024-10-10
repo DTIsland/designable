@@ -1,5 +1,6 @@
 import { parse } from '@babel/parser'
-import { getNpmCDNRegistry } from '../../registry'
+import Prettier from 'prettier/esm/standalone.mjs'
+
 interface IPrettierModule {
   default: {
     format(
@@ -17,11 +18,8 @@ const cache: { prettier: Promise<IPrettierModule> } = {
 }
 
 export const format = async (language: string, source: string) => {
-  cache.prettier =
-    cache.prettier ||
-    new Function(
-      `return import("${getNpmCDNRegistry()}/prettier@2.x/esm/standalone.mjs")`
-    )()
+  cache.prettier = cache.prettier || Prettier
+
   return cache.prettier.then((module) => {
     if (
       language === 'javascript.expression' ||

@@ -1,4 +1,3 @@
-// import { loader } from '@monaco-editor/react'
 import chromeTheme from './themes/chrome'
 import monokaiTheme from './themes/monokai'
 import { format } from './format'
@@ -7,7 +6,6 @@ let initialized = false
 
 export const initMonaco = (monaco) => {
   if (initialized) return
-  // loader.init().then(() => {
   monaco.editor.defineTheme('monokai', monokaiTheme as any)
   monaco.editor.defineTheme('chrome-devtools', chromeTheme as any)
   monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
@@ -40,7 +38,6 @@ export const initMonaco = (monaco) => {
     },
   })
   initialized = true
-  // })
 }
 
 // export const initMonaco = () => {
