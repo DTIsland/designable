@@ -37,7 +37,8 @@
     "@formily/reactive": "^2.3.2",
     "@formily/reactive-react": "^2.3.2",
     "@formily/shared": "^2.3.2",
-    "antd": "^5.20.6"
+    "antd": "^5.20.6",
+    "typescript": "5.6.2"
   },
   "dependencies": {
     "@babel/parser": "^7.14.7",
