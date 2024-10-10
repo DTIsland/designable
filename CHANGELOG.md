@@ -1,5 +1,87 @@
 # Changelog
 
+## v1.0.0-beta.46(2024-10-10)
+
+### :tada: Enhancements
+
+1. [feat: update monaco-editor component](https://github.com/alibaba/designable/commit/328e228) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [feat: add PageEditor locales](https://github.com/alibaba/designable/commit/b7a8e06) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [feat: update the settings-form style](https://github.com/alibaba/designable/commit/577e0bd) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [feat: custom SimpleResourceWidget](https://github.com/alibaba/designable/commit/ed3230c) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [feat: customize the icon of Text component](https://github.com/alibaba/designable/commit/67083b1) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [feat: add flowchart component](https://github.com/alibaba/designable/commit/404763f) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [feat: custom design page](https://github.com/alibaba/designable/commit/e035e1e) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [feat: add resource panel](https://github.com/alibaba/designable/commit/38bcde3) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [feat(playground): add tableLayout for ArrayTable (#281)](https://github.com/alibaba/designable/commit/3e961de) :point_right: ( [Jehu](https://github.com/Jehu) )
+
+1. [feat(core): support space-box for translate mode](https://github.com/alibaba/designable/commit/7e75fd5) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
+
+1. [chore: update align line feature](https://github.com/alibaba/designable/commit/a90132a) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
+
+### :beetle: Bug Fixes
+
+1. [fix: pageDataType](https://github.com/alibaba/designable/commit/101e988) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [fix: reset monaco loader](https://github.com/alibaba/designable/commit/9894173) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [fix: upgrade antd from v4 to v5](https://github.com/alibaba/designable/commit/028d169) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [fix: update the ts error](https://github.com/alibaba/designable/commit/083c20f) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [fix(core): quick selection error (#275)](https://github.com/alibaba/designable/commit/ce2b6eb) :point_right: ( [coder-byte](https://github.com/coder-byte) )
+
+1. [fix: fix reaction setter throw error and fix monaco registry can not change completly](https://github.com/alibaba/designable/commit/65f0841) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
+
+1. [fix(antd/next): fix collapse styles](https://github.com/alibaba/designable/commit/bd79e5f) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
+
+1. [fix(react): fix CompositePanel typings](https://github.com/alibaba/designable/commit/5d06c7c) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
+
+1. [fix(core): fix text past can not trigger change](https://github.com/alibaba/designable/commit/d296103) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
+
+1. [fix(core): fix keyboard errror](https://github.com/alibaba/designable/commit/7b9ed43) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
+
+1. [fix: fix free-selection](https://github.com/alibaba/designable/commit/0f3a887) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
+
+### :rose: Improve code quality
+
+1. [refactor: upgrade to the antd v5 api](https://github.com/alibaba/designable/commit/6b9918b) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [refactor: rename designable to didesignable and upgrade to antv5](https://github.com/alibaba/designable/commit/9001532) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+### :rocket: Improve Performance
+
+1. [perf(core): improve dnd performance](https://github.com/alibaba/designable/commit/1722e86) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
+
+### :hammer_and_wrench: Update Workflow Scripts
+
+1. [build: ignore the example build cli](https://github.com/alibaba/designable/commit/b7d48bc) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [build: add tsc rootDir](https://github.com/alibaba/designable/commit/f36c1c5) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [build: ignore unused](https://github.com/alibaba/designable/commit/9ade4ec) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [build: upgrade typescript to 5.6.2](https://github.com/alibaba/designable/commit/01901c7) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [build: add start antd script](https://github.com/alibaba/designable/commit/ed461e0) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [build: upgrade the lerna, webpack to suit new node.js](https://github.com/alibaba/designable/commit/b29b9a3) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+### :blush: Other Changes
+
+1. [chore: improve code](https://github.com/alibaba/designable/commit/f34ba4b) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
+
+1. [chore: improve align line drag experience (#263)](https://github.com/alibaba/designable/commit/91a8a79) :point_right: ( [Janry](https://github.com/Janry) )
+
+1. [chore: update align line feature](https://github.com/alibaba/designable/commit/a90132a) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
+
 ## v1.0.0-beta.45(2022-02-25)
 
 ### :beetle: Bug Fixes
@@ -367,9 +449,3 @@
 ### :beetle: Bug Fixes
 
 1. [fix(react): fix ui can not refresh with top rerender](https://github.com/alibaba/designable/commit/cf63e82) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.6(2021-09-22)
-
-### :blush: Other Changes
-
-1. [chore(project): move formily deps to peerDeps](https://github.com/alibaba/designable/commit/ee19f25) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
