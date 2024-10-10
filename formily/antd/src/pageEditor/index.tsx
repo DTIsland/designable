@@ -21,7 +21,11 @@ import './style.less'
 
 import { SettingsForm } from '@didesignable/react-settings-form'
 
-import { transformToSchema } from '@didesignable/formily-transformer'
+import {
+  IFormilySchema,
+  transformToSchema,
+  transformToTreeNode,
+} from '@didesignable/formily-transformer'
 
 import { createDesigner, KeyCode, Shortcut } from '@didesignable/core'
 
@@ -73,7 +77,10 @@ import { GraphSettingsForm } from '../components/FlowChart/SettingsForm'
 export type PageEditorType = 'form' | 'flowchart'
 export type PageEditorMode = 'edit' | 'view'
 
-export type PageDataType = { flowchartData: IFlowChartData; formData: TreeNode }
+export type PageDataType = {
+  flowchartData: IFlowChartData
+  formData: IFormilySchema
+}
 
 export interface PageEngineCtx {
   formEngine: Engine
@@ -179,7 +186,7 @@ export const PageEditor: React.FC<IPageEditorProps> = (props) => {
       }
 
       const setData = (data: PageDataType) => {
-        engine.setCurrentTree(data.formData)
+        engine.setCurrentTree(transformToTreeNode(data.formData))
         graph.clearCells()
         graph.addNodes(data.flowchartData.nodes)
         graph.addEdges(data.flowchartData.edges)

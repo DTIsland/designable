@@ -16,9 +16,10 @@ export const saveSchema = (designer: Engine) => {
 
 export const loadInitialSchema = (designer: Engine) => {
   try {
-    designer.setCurrentTree(
-      transformToTreeNode(JSON.parse(localStorage.getItem('formily-schema')))
-    )
+    const schema = localStorage.getItem('formily-schema')
+    if (schema) {
+      designer.setCurrentTree(transformToTreeNode(JSON.parse(schema)))
+    }
   } catch {}
 }
 
@@ -33,7 +34,7 @@ export const loadInitialPage = (pageContext: PageEngineCtx) => {
     if (jsonStr) {
       const pageData = JSON.parse(jsonStr) as PageDataType
       pageContext.setData({
-        formData: transformToTreeNode(pageData.formData),
+        formData: pageData.formData,
         flowchartData: pageData.flowchartData,
       })
     }
