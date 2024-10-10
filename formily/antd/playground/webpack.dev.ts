@@ -44,7 +44,7 @@ export default {
     ]),
     new webpack.HotModuleReplacementPlugin(),
     new MonacoPlugin({
-      languages: ['json'],
+      languages: ['json', 'javascript', 'html', 'css', 'typescript'],
     }),
     // new BundleAnalyzerPlugin()
   ],
