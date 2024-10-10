@@ -5,16 +5,12 @@ import {
   ViewToolsWidget,
   Workspace,
   OutlineTreeWidget,
-  ResourceWidget,
   SimpleResourceWidget,
-  HistoryWidget,
   StudioPanel,
-  CompositePanel,
   WorkspacePanel,
   ToolbarPanel,
   ViewportPanel,
   ViewPanel,
-  SettingsPanel,
   SourceBarPanel,
   ComponentTreeWidget,
 } from '@didesignable/react'
@@ -29,8 +25,6 @@ import {
   KeyCode,
 } from '@didesignable/core'
 import {
-  LogoWidget,
-  ActionsWidget,
   PreviewWidget,
   SchemaEditorWidget,
   MarkupSchemaWidget,
@@ -55,7 +49,6 @@ import {
   Upload,
   Switch,
   Text,
-  Card,
   ArrayCards,
   ObjectContainer,
   ArrayTable,
@@ -67,15 +60,7 @@ import {
 } from '../src'
 
 import dayjs from 'dayjs'
-import {
-  Button,
-  Col,
-  ConfigProvider,
-  Dropdown,
-  MenuProps,
-  Row,
-  Tabs,
-} from 'antd'
+import { ConfigProvider, Dropdown, Row, Tabs } from 'antd'
 
 setNpmCDNRegistry('//unpkg.com')
 
@@ -83,7 +68,7 @@ import '../src/theme.css'
 import 'dayjs/locale/zh-cn'
 import './styles.css'
 import zhCN from 'antd/locale/zh_CN'
-import { DownOutlined, ItalicOutlined } from '@ant-design/icons'
+import { AppstoreOutlined, ItalicOutlined } from '@ant-design/icons'
 
 dayjs.locale('zh-cn')
 
@@ -144,8 +129,12 @@ const App = () => {
     },
     {
       key: '2',
-      label: '事件',
-      children: 'Content of Tab Pane 2',
+      label: 'Outline',
+      children: (
+        <>
+          <OutlineTreeWidget />
+        </>
+      ),
     },
   ]
 
@@ -178,23 +167,28 @@ const App = () => {
                 display: 'flex',
               }}
             >
-              <SimpleResourceWidget
-                sources={[
-                  Rate,
-                  Slider,
-                  Select,
-                  TreeSelect,
-                  Cascader,
-                  Transfer,
-                  Checkbox,
-                  Radio,
-                  DatePicker,
-                  TimePicker,
-                  Upload,
-                  Switch,
-                  ObjectContainer,
-                ]}
-              />
+              <Dropdown
+                dropdownRender={() => {
+                  return (
+                    <div
+                      style={{
+                        background: '#fff',
+                        padding: '8px 32px',
+                        border: '1px solid #f0f0f0',
+                      }}
+                    >
+                      <SimpleResourceWidget
+                        className="dropdownResource"
+                        sources={[FormLayout, FormGrid, ObjectContainer]}
+                      />
+                    </div>
+                  )
+                }}
+                placement="bottom"
+              >
+                <AppstoreOutlined />
+              </Dropdown>
+              <SimpleResourceWidget sources={[Text, Upload, ArrayTable]} />
             </SourceBarPanel>
             <Dropdown
               dropdownRender={() => {
@@ -208,7 +202,15 @@ const App = () => {
                   >
                     <SimpleResourceWidget
                       className="dropdownResource"
-                      sources={[Input, Password]}
+                      sources={[
+                        Input,
+                        Password,
+                        Select,
+                        Checkbox,
+                        Radio,
+                        DatePicker,
+                        TimePicker,
+                      ]}
                     />
                   </div>
                 )
@@ -250,6 +252,7 @@ const App = () => {
                           Checkbox,
                           Slider,
                           Rate,
+                          Text,
                           NumberPicker,
                           Transfer,
                           Password,
@@ -257,8 +260,6 @@ const App = () => {
                           TimePicker,
                           Upload,
                           Switch,
-                          Text,
-                          Card,
                           ArrayCards,
                           ArrayTable,
                           Space,
@@ -287,21 +288,6 @@ const App = () => {
             </Workspace>
             <div
               style={{
-                // flex-grow: 0;
-                // flex-shrink: 0;
-                // position: relative;
-                // display: flex;
-                // flex-direction: column;
-                // z-index: 2;
-                // width: 300px;
-                // background: var(--dn-composite-panel-tabs-content-bg-color);
-                // border-left: 1px solid var(--dn-panel-border-color);
-                // height: 100%;
-                // box-sizing: content-box;
-                // -webkit-user-select: none;
-                // -moz-user-select: none;
-                // user-select: none;
-                // transform to react style
                 width: '300px',
                 background: 'var(--dn-composite-panel-tabs-content-bg-color)',
                 borderLeft: '1px solid var(--dn-panel-border-color)',
@@ -318,9 +304,10 @@ const App = () => {
                 position: 'relative',
               }}
             >
-              <Tabs items={tabItems} />
+              <Tabs items={tabItems} type="card" />
             </div>
             {/* <SettingsPanel title="panels.PropertySettings">
+              <SettingsForm uploadAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" />
             </SettingsPanel> */}
           </Row>
         </StudioPanel>

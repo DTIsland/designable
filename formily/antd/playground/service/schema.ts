@@ -4,6 +4,7 @@ import {
   transformToTreeNode,
 } from '@didesignable/formily-transformer'
 import { message } from 'antd'
+import { PageDataType, PageEngineCtx } from '../../src/pageEditor'
 
 export const saveSchema = (designer: Engine) => {
   localStorage.setItem(
@@ -19,4 +20,25 @@ export const loadInitialSchema = (designer: Engine) => {
       transformToTreeNode(JSON.parse(localStorage.getItem('formily-schema')))
     )
   } catch {}
+}
+
+export const savePage = (pageData: PageDataType) => {
+  localStorage.setItem('page-schema', JSON.stringify(pageData))
+  message.success('Save Success')
+}
+
+export const loadInitialPage = (pageContext: PageEngineCtx) => {
+  try {
+    const jsonStr = localStorage.getItem('page-schema')
+    if (jsonStr) {
+      const pageData = JSON.parse(jsonStr) as PageDataType
+      pageContext.setData({
+        formData: transformToTreeNode(pageData.formData),
+        flowchartData: pageData.flowchartData,
+      })
+    }
+  } catch (e) {
+    throw new Error('loadInitialPage error' + e.message)
+  }
+  return null
 }
