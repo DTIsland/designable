@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.0.0-beta.45(2022-02-25)
+
+### :beetle: Bug Fixes
+
+1. [fix: fix typo](https://github.com/alibaba/designable/commit/d672efa) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
+
+1. [fix(react): improve typings](https://github.com/alibaba/designable/commit/38c2f73) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
+
+1. [fix: antd style prefix problem (#229)](https://github.com/alibaba/designable/commit/e95b12c) :point_right: ( [Dodd](https://github.com/Dodd) )
+
+### :rocket: Improve Performance
+
+1. [perf: improve performance](https://github.com/alibaba/designable/commit/7144d87) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
+
+### :blush: Other Changes
+
+1. [chore: update examples](https://github.com/alibaba/designable/commit/e809137) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
+
 ## v1.0.0-beta.44(2022-02-16)
 
 ### :tada: Enhancements
@@ -355,13 +373,3 @@
 ### :blush: Other Changes
 
 1. [chore(project): move formily deps to peerDeps](https://github.com/alibaba/designable/commit/ee19f25) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.5(2021-09-22)
-
-### :beetle: Bug Fixes
-
-1. [fix(formily-antd): fix DatePicker settings](https://github.com/alibaba/designable/commit/2e7e9d2) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-### :blush: Other Changes
-
-1. [chore(react): update NodePathWidget dependencies](https://github.com/alibaba/designable/commit/87d801e) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
