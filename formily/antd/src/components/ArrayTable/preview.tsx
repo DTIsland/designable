@@ -24,6 +24,7 @@ import './styles.less'
 import { createVoidFieldSchema } from '../Field'
 import { AllSchemas } from '../../schemas'
 import { AllLocales } from '../../locales'
+import { TableOutlined } from '@ant-design/icons'
 
 const ensureObjectItemsNode = createEnsureTypeItemsNode('object')
 
@@ -446,7 +447,7 @@ ArrayTable.Behavior = createBehavior(createArrayBehavior('ArrayTable'), {
 })
 
 ArrayTable.Resource = createResource({
-  icon: 'ArrayTableSource',
+  icon: <TableOutlined />,
   elements: [
     {
       componentName: 'Field',
