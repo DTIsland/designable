@@ -7,7 +7,7 @@
     "npm": ">=3.0.0"
   },
   "scripts": {
-    "build": "rimraf dist && webpack-cli --config config/webpack.prod.ts",
+    "ignore-build": "rimraf dist && webpack-cli --config config/webpack.prod.ts",
     "start": "webpack-dev-server --config config/webpack.dev.ts"
   },
   "devDependencies": {
