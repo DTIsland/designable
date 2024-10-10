@@ -6,6 +6,7 @@ import { AllSchemas } from '../../schemas'
 import { AllLocales } from '../../locales'
 import cls from 'classnames'
 import './styles.less'
+import { ItalicOutlined } from '@ant-design/icons'
 
 export interface IDesignableTextProps {
   value?: string
@@ -39,7 +40,7 @@ Text.Behavior = createBehavior({
 })
 
 Text.Resource = createResource({
-  icon: 'TextSource',
+  icon: <ItalicOutlined />,
   elements: [
     {
       componentName: 'Field',
