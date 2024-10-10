@@ -58,8 +58,6 @@ import {
 import { Dropdown, Form as MyForm, Row, Tabs, Tooltip } from 'antd'
 import type { Tab } from 'rc-tabs/lib/interface'
 
-// setNpmCDNRegistry('//unpkg.com')
-
 import {
   FontSizeOutlined,
   LayoutOutlined,

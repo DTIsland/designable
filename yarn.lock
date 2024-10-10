@@ -152,6 +152,55 @@
     resize-observer-polyfill "^1.5.1"
     throttle-debounce "^5.0.0"
 
+"@antv/x6-common@^2.0.16":
+  version "2.0.17"
+  resolved "https://registry.npmmirror.com/@antv/x6-common/-/x6-common-2.0.17.tgz#a40a0920859faadf567452dea81132783a19aaa4"
+  integrity sha512-37g7vmRkNdYzZPdwjaMSZEGv/MMH0S4r70/Jwoab1mioycmuIBN73iyziX8m56BvJSDucZ3J/6DU07otWqzS6A==
+  dependencies:
+    lodash-es "^4.17.15"
+    utility-types "^3.10.0"
+
+"@antv/x6-geometry@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.npmmirror.com/@antv/x6-geometry/-/x6-geometry-2.0.5.tgz#c158317d74135bedd78c2fdeb76f9c7cfa0ef0aa"
+  integrity sha512-MId6riEQkxphBpVeTcL4ZNXL4lScyvDEPLyIafvWMcWNTGK0jgkK7N20XSzqt8ltJb0mGUso5s56mrk8ysHu2A==
+
+"@antv/x6-plugin-clipboard@^2.1.6":
+  version "2.1.6"
+  resolved "https://registry.npmmirror.com/@antv/x6-plugin-clipboard/-/x6-plugin-clipboard-2.1.6.tgz#98886d5b16a175b67f142ef66c75907de7c1b069"
+  integrity sha512-roZPLnZx6PK8MBvee0QMo90fz/TXeF0WNe4EGin2NBq5M1I5XTWrYvA6N2XVIiWAAI67gjQeEE8TpkL7f8QdqA==
+
+"@antv/x6-plugin-history@^2.2.4":
+  version "2.2.4"
+  resolved "https://registry.npmmirror.com/@antv/x6-plugin-history/-/x6-plugin-history-2.2.4.tgz#c4a543b8a2b6ae8b6934ec69067688459cae6c48"
+  integrity sha512-9gHHvEW4Fla+1hxUV49zNgJyIMoV9CjVM52MrFgAJcvyRn1Kvxz4MfxiKlG+DEZUs+/zvfjl9pS6gJOd8laRkg==
+
+"@antv/x6-plugin-keyboard@^2.2.3":
+  version "2.2.3"
+  resolved "https://registry.npmmirror.com/@antv/x6-plugin-keyboard/-/x6-plugin-keyboard-2.2.3.tgz#4f774ad27527596400ba85ce8597cf8ad7e65ff8"
+  integrity sha512-pnCIC+mDyKKfkcDyLePfGxKVIqXBcldTgannITkHC1kc0IafRS1GMvzpvuDGrM5haRYd6Nwz8kjkJyHkJE4GPA==
+  dependencies:
+    mousetrap "^1.6.5"
+
+"@antv/x6-plugin-selection@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.npmmirror.com/@antv/x6-plugin-selection/-/x6-plugin-selection-2.2.2.tgz#681c843124c2150af51594e8e1fc947b5e95e858"
+  integrity sha512-s2gtR9Onlhr7HOHqyqg0d+4sG76JCcQEbvrZZ64XmSChlvieIPlC3YtH4dg1KMNhYIuBmBmpSum6S0eVTEiPQw==
+
+"@antv/x6-plugin-snapline@^2.1.7":
+  version "2.1.7"
+  resolved "https://registry.npmmirror.com/@antv/x6-plugin-snapline/-/x6-plugin-snapline-2.1.7.tgz#1b4e3be0a281ba324117b7ac7b9b8c39e484cce2"
+  integrity sha512-AsysoCb9vES0U2USNhEpYuO/W8I0aYfkhlbee5Kt4NYiMfQfZKQyqW/YjDVaS2pm38C1NKu1LdPVk/BBr4CasA==
+
+"@antv/x6@^2.18.1":
+  version "2.18.1"
+  resolved "https://registry.npmmirror.com/@antv/x6/-/x6-2.18.1.tgz#4f3fab8c24119ca5f83583188657fc243cc5a0bc"
+  integrity sha512-FkWdbLOpN9J7dfJ+kiBxzowSx2N6syBily13NMVdMs+wqC6Eo5sLXWCZjQHateTFWgFw7ZGi2y9o3Pmdov1sXw==
+  dependencies:
+    "@antv/x6-common" "^2.0.16"
+    "@antv/x6-geometry" "^2.0.5"
+    utility-types "^3.10.0"
+
 "@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://registry.npmmirror.com/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
@@ -3352,9 +3401,9 @@
     csstype "^3.0.2"
 
 "@types/react@^16", "@types/react@^16.9.43":
-  version "16.14.60"
-  resolved "https://registry.npmmirror.com/@types/react/-/react-16.14.60.tgz#f7ab62a329b82826f12d02bc8031d4ef4b5e0d81"
-  integrity sha512-wIFmnczGsTcgwCBeIYOuy2mdXEiKZ5znU/jNOnMZPQyCcIxauMGWlX0TNG4lZ7NxRKj7YUIZRneJQSSdB2jKgg==
+  version "16.14.62"
+  resolved "https://registry.npmmirror.com/@types/react/-/react-16.14.62.tgz#449e4e81caaf132d0c2c390644e577702db1dd9e"
+  integrity sha512-BWf7hqninZav6nerxXj+NeZT/mTpDeG6Lk2zREHAy63CrnXoOGPGtNqTFYFN/sqpSaREDP5otVV88axIXmKfGA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "^0.16"
@@ -13471,6 +13520,11 @@ monaco-editor@^0.25.2:
   resolved "https://registry.npmmirror.com/monaco-editor/-/monaco-editor-0.25.2.tgz#119e2b15bbd968a1a99c03cac9c329316d7c37e9"
   integrity sha512-5iylzSJevCnzJn9UVsW8yOZ3yHjmAs4TfvH3zsbftKiFKmHG0xirGN6DK9Kk04VSWxYCZZAIafYJoNJJMAU1KA==
 
+mousetrap@^1.6.5:
+  version "1.6.5"
+  resolved "https://registry.npmmirror.com/mousetrap/-/mousetrap-1.6.5.tgz#8a766d8c272b08393d5f56074e0b5ec183485bf9"
+  integrity sha512-QNo4kEepaIBwiT8CDhP98umTetp+JNfQYBWvC1pc6/OAibuXtRcxZ58Qz8skvEHYvURne/7R8T5VoOI7rDsEUA==
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmmirror.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -20087,6 +20141,11 @@ utila@~0.4:
   version "0.4.0"
   resolved "https://registry.npmmirror.com/utila/-/utila-0.4.0.tgz#8a16a05d445657a3aea5eecc5b12a4fa5379772c"
   integrity sha512-Z0DbgELS9/L/75wZbro8xAnT50pBVFQZ+hUEueGDU5FN51YSCYM+jdxsfCiHjwNP/4LCDD0i/graKpeBnOXKRA==
+
+utility-types@^3.10.0:
+  version "3.11.0"
+  resolved "https://registry.npmmirror.com/utility-types/-/utility-types-3.11.0.tgz#607c40edb4f258915e901ea7995607fdf319424c"
+  integrity sha512-6Z7Ma2aVEWisaL6TvBCy7P8rm2LQoPv6dJ7ecIaIixHcwfbJ0x7mWdbcwlIM5IGQxPZSFYeqRCqlOOeKoJYMkw==
 
 utils-merge@1.0.1:
   version "1.0.1"

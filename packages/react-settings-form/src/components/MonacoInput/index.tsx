@@ -59,7 +59,6 @@ export const MonacoInput: React.FC<MonacoInputProps> & {
 
   useEffect(() => {
     unmountedRef.current = false
-    initMonaco()
     return () => {
       if (extraLibRef.current) {
         extraLibRef.current.dispose()
@@ -130,6 +129,7 @@ export const MonacoInput: React.FC<MonacoInputProps> & {
   ) => {
     editorRef.current = editor
     monacoRef.current = monaco
+    initMonaco(monaco)
     onMount?.(editor, monaco)
     const model = editor.getModel()
     const currentValue = editor.getValue()
