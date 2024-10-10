@@ -58,10 +58,12 @@ export const DataSourceSetter: React.FC<IDataSourceSetterProps> = observer(
             <TextWidget token="SettingComponents.DataSourceSetter.configureDataSource" />
           }
           width="65%"
-          bodyStyle={{ padding: 10 }}
+          styles={{
+            body: { padding: 10 },
+          }}
           transitionName=""
           maskTransitionName=""
-          visible={modalVisible}
+          open={modalVisible}
           onCancel={closeModal}
           onOk={() => {
             onChange(transformDataToValue(treeDataSource.dataSource))
