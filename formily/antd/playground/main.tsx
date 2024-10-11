@@ -6,11 +6,11 @@ import { createRoot } from 'react-dom/client'
 import Home from './home'
 import Custom from './custom'
 
-import '../src/theme.css'
 import 'dayjs/locale/zh-cn'
 
 import zhCN from 'antd/locale/zh_CN'
 import PageEditor from './page'
+import './styles.css'
 
 dayjs.locale('zh-cn')
 

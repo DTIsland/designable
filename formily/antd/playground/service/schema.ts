@@ -4,7 +4,7 @@ import {
   transformToTreeNode,
 } from '@didesignable/formily-transformer'
 import { message } from 'antd'
-import { PageDataType, PageEngineCtx } from '../../src/pageEditor'
+import { PageDataType, PageEngineCtx } from '../../src'
 
 export const saveSchema = (designer: Engine) => {
   localStorage.setItem(

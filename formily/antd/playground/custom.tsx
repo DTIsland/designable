@@ -14,10 +14,7 @@ import {
   SourceBarPanel,
   ComponentTreeWidget,
 } from '@didesignable/react'
-import {
-  SettingsForm,
-  setNpmCDNRegistry,
-} from '@didesignable/react-settings-form'
+import { SettingsForm } from '@didesignable/react-settings-form'
 import {
   createDesigner,
   GlobalRegistry,
@@ -62,9 +59,6 @@ import {
 import dayjs from 'dayjs'
 import { ConfigProvider, Dropdown, Row, Tabs } from 'antd'
 
-// setNpmCDNRegistry('//unpkg.com')
-
-import '../src/theme.css'
 import 'dayjs/locale/zh-cn'
 import './styles.css'
 import zhCN from 'antd/locale/zh_CN'

@@ -1,9 +1,15 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import { Button, ConfigProvider, Divider, Space } from 'antd'
 import zhCN from 'antd/locale/zh_CN'
 
-import { PageEditor, PageEngineCtx } from '../src'
+import {
+  PageEditorContext,
+  PageEditorProvider,
+  PageEditorRightPanel,
+  PageEditorToolbar,
+  PageEditorWorkbench,
+} from '../src'
 import { loadInitialPage, savePage } from './service'
 
 import {
@@ -26,38 +32,24 @@ import {
 ;(SimpleUpload as any).Resource[0].showTitle = false
 ;(ArrayTable as any).Resource[0].showTitle = false
 
-export const Page: React.FC<{}> = () => {
-  const pageEditorRef = useRef<PageEngineCtx | undefined>()
+const PageEditor = () => {
+  const pageEditorCtx = useContext(PageEditorContext)
 
   const onSave = () => {
-    if (pageEditorRef.current) {
-      const data = pageEditorRef.current.getData()
-      // saveSchema(pageEditorRef.current?.formEngine)
+    const data = pageEditorCtx.getData()
+    if (data) {
       savePage(data)
     }
   }
 
-  const pageRef = (ref: PageEngineCtx) => {
-    pageEditorRef.current = ref
-  }
-
-  const changeEditorMode = () => {}
-
   useEffect(() => {
-    if (pageEditorRef.current) {
-      loadInitialPage(pageEditorRef.current)
+    if (pageEditorCtx) {
+      loadInitialPage(pageEditorCtx)
     }
   }, [])
 
   return (
-    <ConfigProvider
-      locale={zhCN}
-      theme={{
-        cssVar: {
-          key: 'ant',
-        },
-      }}
-    >
+    <>
       <Space
         style={{
           display: 'flex',
@@ -76,11 +68,11 @@ export const Page: React.FC<{}> = () => {
           left: 0,
           right: 0,
           bottom: 0,
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
-        <PageEditor
-          pageRef={pageRef}
-          onPageTypeChange={changeEditorMode}
+        <PageEditorToolbar
           layoutWidgets={[FormLayout, FormGrid, ObjectContainer]}
           normalWidgets={[Text, SimpleUpload, ArrayTable]}
           formWidgets={[
@@ -94,7 +86,38 @@ export const Page: React.FC<{}> = () => {
             TimePicker,
           ]}
         />
+        <div
+          style={{
+            position: 'relative',
+            display: 'flex',
+            flex: '1',
+            overflow: 'hidden',
+            width: '100%',
+            height: '100%',
+            gridTemplateColumns: 'auto 300px',
+          }}
+        >
+          <PageEditorWorkbench />
+          <PageEditorRightPanel />
+        </div>
       </div>
+    </>
+  )
+}
+
+export const Page: React.FC<{}> = () => {
+  return (
+    <ConfigProvider
+      locale={zhCN}
+      theme={{
+        cssVar: {
+          key: 'ant',
+        },
+      }}
+    >
+      <PageEditorProvider>
+        <PageEditor />
+      </PageEditorProvider>
     </ConfigProvider>
   )
 }
