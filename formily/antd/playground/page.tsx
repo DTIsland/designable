@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import { Button, ConfigProvider, Divider, Space } from 'antd'
 import zhCN from 'antd/locale/zh_CN'
 
-import { PageEditor, PageEngineCtx } from '../src/pageEditor'
+import { PageEditor, PageEngineCtx } from '../src'
 import { loadInitialPage, savePage } from './service'
 
 import {
@@ -22,7 +22,6 @@ import {
   FormLayout,
   FormGrid,
 } from '../src/components'
-
 ;(Text as any).Resource[0].showTitle = false
 ;(SimpleUpload as any).Resource[0].showTitle = false
 ;(ArrayTable as any).Resource[0].showTitle = false
