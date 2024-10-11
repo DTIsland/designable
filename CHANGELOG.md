@@ -1,5 +1,25 @@
 # Changelog
 
+## v1.0.0-beta.47(2024-10-10)
+
+### :tada: Enhancements
+
+1. [feat: update css loader](https://github.com/alibaba/designable/commit/e01916f) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+### :rose: Improve code quality
+
+1. [refactor: remove the build for umd](https://github.com/alibaba/designable/commit/5e8220b) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [refactor: native the resource importing](https://github.com/alibaba/designable/commit/c6376f2) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+### :hammer_and_wrench: Update Workflow Scripts
+
+1. [refactor: remove the build for umd](https://github.com/alibaba/designable/commit/5e8220b) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [build: release new beta version](https://github.com/alibaba/designable/commit/05e3213) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [build: npm ignore src dir](https://github.com/alibaba/designable/commit/9ffeca0) :point_right: ( [wewoor](https://github.com/wewoor) )
+
 ## v1.0.0-beta.46(2024-10-10)
 
 ### :tada: Enhancements
@@ -443,9 +463,3 @@
 ### :rose: Improve code quality
 
 1. [refactor(core): change defaultComponentTree type ITreeNode[] to ITreeNode](https://github.com/alibaba/designable/commit/40b2af7) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.7(2021-09-22)
-
-### :beetle: Bug Fixes
-
-1. [fix(react): fix ui can not refresh with top rerender](https://github.com/alibaba/designable/commit/cf63e82) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
