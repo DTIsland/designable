@@ -26,6 +26,7 @@ export interface PageEngineCtx {
   formEngine: Engine
   formInstance: FormInstance<any>
   flowchartEngine: Graph
+  data: PageDataType
   getData: () => PageDataType
   setData: (data: PageDataType) => void
   initGraphRef: (graph: Graph) => void
@@ -43,6 +44,7 @@ export const PageEditorContext = createContext({} as PageEngineCtx)
 export class PageEditorProvider extends React.Component<IPageEditorProps> {
   engine: Engine
   flowChartEngine: Graph
+  data: PageDataType
   formInstance: FormInstance<any>
   state: Readonly<{
     mode: PageEditorMode
@@ -74,21 +76,44 @@ export class PageEditorProvider extends React.Component<IPageEditorProps> {
 
   getData = (): PageDataType => {
     const { engine, flowChartEngine } = this
-    return {
+    let data = {
+      formData: {},
       flowchartData: {
-        nodes: flowChartEngine.getNodes(),
-        edges: flowChartEngine.getEdges(),
+        nodes: [],
+        edges: [],
       },
-      formData: transformToSchema(engine.getCurrentTree()),
     }
+    if (engine) {
+      data.formData = transformToSchema(engine.getCurrentTree())
+    }
+    if (flowChartEngine) {
+      data.flowchartData.nodes = flowChartEngine.getNodes()
+      data.flowchartData.edges = flowChartEngine.getEdges()
+    }
+    this.data = data
+    return data
   }
 
   setData = (data: PageDataType) => {
-    const { engine, flowChartEngine } = this
-    engine.setCurrentTree(transformToTreeNode(data.formData))
-    flowChartEngine.clearCells()
-    flowChartEngine.addNodes(data.flowchartData.nodes)
-    flowChartEngine.addEdges(data.flowchartData.edges)
+    this.setFormSchema(data.formData)
+    this.setFlowChartData(data.flowchartData)
+    this.data = data
+  }
+
+  setFormSchema = (schema: IFormilySchema) => {
+    const { engine } = this
+    if (engine) {
+      engine.setCurrentTree(transformToTreeNode(schema))
+    }
+  }
+
+  setFlowChartData = (data: IFlowChartData) => {
+    const { flowChartEngine } = this
+    if (flowChartEngine) {
+      flowChartEngine.clearCells()
+      flowChartEngine.addNodes(data.nodes)
+      flowChartEngine.addEdges(data.edges)
+    }
   }
 
   onSwitchPageType = () => {
@@ -100,6 +125,10 @@ export class PageEditorProvider extends React.Component<IPageEditorProps> {
 
   initGraphRef = (graph: Graph) => {
     this.flowChartEngine = graph
+  }
+
+  onFlowChartChange = () => {
+    // this.setFlowChartData(data)
   }
 
   initFormInstance = (form: FormInstance<any>) => {
@@ -125,6 +154,7 @@ export class PageEditorProvider extends React.Component<IPageEditorProps> {
               initGraphRef: this.initGraphRef,
               initFormInstance: this.initFormInstance,
               onSwitchPageType: this.onSwitchPageType,
+              data: this.data,
             }}
           >
             {children}

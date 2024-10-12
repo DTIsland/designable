@@ -132,36 +132,44 @@ export const PageEditorWorkbench: React.FC<IPageEditorWorkbenchProps> = (
     <div className={classNames('pageEditorContainer', className)}>
       <div
         style={{
-          display: !isFlowChartPage ? 'flex' : 'none',
+          position: 'relative',
           width: '100%',
           height: '100%',
         }}
       >
-        <Workspace id="form">
-          <WorkspacePanel>
-            <ToolbarPanel>
-              <DesignerToolsWidget />
-              <ViewToolsWidget use={['DESIGNABLE', 'PREVIEW']} />
-            </ToolbarPanel>
-            <ViewportPanel style={{ height: '100%' }}>
-              <ViewPanel type="DESIGNABLE">
-                {() => <ComponentTreeWidget components={componentTree} />}
-              </ViewPanel>
-              <ViewPanel type="PREVIEW">
-                {(tree) => <PreviewWidget tree={tree} />}
-              </ViewPanel>
-            </ViewportPanel>
-          </WorkspacePanel>
-        </Workspace>
-      </div>
-      <div
-        style={{
-          display: isFlowChartPage ? 'flex' : 'none',
-          width: '100%',
-          height: '100%',
-        }}
-      >
-        <FlowChart graphRef={graphRef} />
+        <div
+          style={{
+            display: !isFlowChartPage ? 'flex' : 'none',
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <Workspace id="form">
+            <WorkspacePanel>
+              <ToolbarPanel>
+                <DesignerToolsWidget />
+                <ViewToolsWidget use={['DESIGNABLE', 'PREVIEW']} />
+              </ToolbarPanel>
+              <ViewportPanel style={{ height: '100%' }}>
+                <ViewPanel type="DESIGNABLE">
+                  {() => <ComponentTreeWidget components={componentTree} />}
+                </ViewPanel>
+                <ViewPanel type="PREVIEW">
+                  {(tree) => <PreviewWidget tree={tree} />}
+                </ViewPanel>
+              </ViewportPanel>
+            </WorkspacePanel>
+          </Workspace>
+        </div>
+        <div
+          style={{
+            visibility: isFlowChartPage ? 'visible' : 'hidden', // use visibility instead of display to keep the graph state
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <FlowChart graphRef={graphRef} />
+        </div>
       </div>
     </div>
   )

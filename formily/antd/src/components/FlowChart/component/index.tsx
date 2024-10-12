@@ -197,7 +197,21 @@ export class FlowChart extends React.Component<IFlowChartProps> {
     super(props)
   }
 
-  componentDidMount(): void {
+  componentDidMount() {
+    this.initGraph()
+    this.initPlugins()
+    this.initEvents()
+    this.initData()
+  }
+
+  // componentDidUpdate(prevProps: Readonly<IFlowChartProps>) {
+  //   if (prevProps.data !== this.props.data) {
+  //     this.graph.clearCells()
+  //     this.initData()
+  //   }
+  // }
+
+  private initGraph = () => {
     this.graph = new Graph({
       container: this.container,
       grid: false,
@@ -251,17 +265,7 @@ export class FlowChart extends React.Component<IFlowChartProps> {
         },
       },
     })
-    this.initPlugins()
-    this.initData()
-    this.initEvents()
     this.props.graphRef && this.props.graphRef(this.graph)
-  }
-
-  componentDidUpdate(prevProps: Readonly<IFlowChartProps>): void {
-    if (prevProps.data !== this.props.data) {
-      this.graph.clearCells()
-      this.initData()
-    }
   }
 
   private initData = () => {
