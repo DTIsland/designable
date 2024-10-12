@@ -6,6 +6,11 @@
   "engines": {
     "npm": ">=3.0.0"
   },
+  "files": [
+    "lib",
+    "esm",
+    "dist"
+  ],
   "module": "esm",
   "repository": {
     "type": "git",

@@ -4,6 +4,11 @@
   "license": "MIT",
   "main": "lib",
   "module": "esm",
+  "files": [
+    "lib",
+    "esm",
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alibaba/designable.git"
@@ -64,7 +69,8 @@
     "antd": "^5.20.6",
     "react": ">=16.8.0 || >=17.0.0",
     "react-dom": ">=16.8.0",
-    "react-is": ">=16.8.0 || >=17.0.0"
+    "react-is": ">=16.8.0 || >=17.0.0",
+    "dayjs": "^1.11.13"
   },
   "dependencies": {
     "@antv/x6": "^2.18.1",

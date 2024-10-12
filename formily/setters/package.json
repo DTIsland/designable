@@ -9,6 +9,11 @@
     "url": "git+https://github.com/alibaba/designable.git"
   },
   "types": "esm/index.d.ts",
+  "files": [
+    "lib",
+    "esm",
+    "dist"
+  ],
   "bugs": {
     "url": "https://github.com/alibaba/didesignable/issues"
   },

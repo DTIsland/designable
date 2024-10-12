@@ -4,6 +4,11 @@
   "license": "MIT",
   "main": "lib",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "esm",
+    "dist"
+  ],
   "engines": {
     "npm": ">=3.0.0"
   },
