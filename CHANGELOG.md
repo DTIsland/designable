@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.0.0-beta.49(2024-10-12)
+
+### :tada: Enhancements
+
+1. [feat: update the pageEditor demo](https://github.com/alibaba/designable/commit/16ca0e4) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [feat: exctracting to sperate component](https://github.com/alibaba/designable/commit/9c5b98a) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+### :rose: Improve code quality
+
+1. [refactor: export PreviewWIdget](https://github.com/alibaba/designable/commit/c7e44e5) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [refactor: pageEditor component](https://github.com/alibaba/designable/commit/e8af764) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+### :hammer_and_wrench: Update Workflow Scripts
+
+1. [build: exports defaults](https://github.com/alibaba/designable/commit/f26534d) :point_right: ( [wewoor](https://github.com/wewoor) )
+
 ## v1.0.0-beta.48(2024-10-11)
 
 ### :beetle: Bug Fixes
@@ -453,11 +471,3 @@
 ### :beetle: Bug Fixes
 
 1. [fix(shared): fix batch add event conflict with multi engine](https://github.com/alibaba/designable/commit/a92f56b) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.9(2021-09-27)
-
-### :beetle: Bug Fixes
-
-1. [fix(core): fix event driver conflict](https://github.com/alibaba/designable/commit/af41004) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-1. [fix(formily): fix FormLayout locales](https://github.com/alibaba/designable/commit/ea2648a) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
