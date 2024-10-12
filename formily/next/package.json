@@ -1,6 +1,6 @@
 {
   "name": "@didesignable/formily-next",
-  "version": "1.0.0-beta.48",
+  "version": "1.0.0-beta.49",
   "license": "MIT",
   "main": "lib",
   "module": "esm",
@@ -24,7 +24,7 @@
     "start": "webpack-dev-server --config playground/webpack.dev.ts"
   },
   "devDependencies": {
-    "@didesignable/react-settings-form": "1.0.0-beta.48",
+    "@didesignable/react-settings-form": "1.0.0-beta.49",
     "@formily/core": "^2.0.2",
     "@formily/next": "^2.0.2",
     "@formily/react": "^2.0.2",
@@ -61,10 +61,10 @@
     "react-is": ">=16.8.0 || >=17.0.0"
   },
   "dependencies": {
-    "@didesignable/core": "1.0.0-beta.48",
-    "@didesignable/formily-setters": "1.0.0-beta.48",
-    "@didesignable/formily-transformer": "1.0.0-beta.48",
-    "@didesignable/react": "1.0.0-beta.48"
+    "@didesignable/core": "1.0.0-beta.49",
+    "@didesignable/formily-setters": "1.0.0-beta.49",
+    "@didesignable/formily-transformer": "1.0.0-beta.49",
+    "@didesignable/react": "1.0.0-beta.49"
   },
   "publishConfig": {
     "access": "public"

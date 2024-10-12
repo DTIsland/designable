@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.0-beta.48(2024-10-11)
+
+### :beetle: Bug Fixes
+
+1. [fix: update the exports and dependencies](https://github.com/alibaba/designable/commit/11115bb) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [fix: export pageEditor](https://github.com/alibaba/designable/commit/677239e) :point_right: ( [wewoor](https://github.com/wewoor) )
+
 ## v1.0.0-beta.47(2024-10-10)
 
 ### :tada: Enhancements
@@ -453,13 +461,3 @@
 1. [fix(core): fix event driver conflict](https://github.com/alibaba/designable/commit/af41004) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
 
 1. [fix(formily): fix FormLayout locales](https://github.com/alibaba/designable/commit/ea2648a) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.8(2021-09-22)
-
-### :beetle: Bug Fixes
-
-1. [fix(react): fix Workspace will throw error when designer is undefined](https://github.com/alibaba/designable/commit/611e9e6) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-### :rose: Improve code quality
-
-1. [refactor(core): change defaultComponentTree type ITreeNode[] to ITreeNode](https://github.com/alibaba/designable/commit/40b2af7) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
