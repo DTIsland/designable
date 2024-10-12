@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.0.0-beta.50(2024-10-12)
+
+### :beetle: Bug Fixes
+
+1. [build: fix exports](https://github.com/alibaba/designable/commit/f3f2043) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+### :hammer_and_wrench: Update Workflow Scripts
+
+1. [build: fix exports](https://github.com/alibaba/designable/commit/f3f2043) :point_right: ( [wewoor](https://github.com/wewoor) )
+
 ## v1.0.0-beta.49(2024-10-12)
 
 ### :tada: Enhancements
@@ -465,9 +475,3 @@
 ### :beetle: Bug Fixes
 
 1. [fix: fix controlled props can not update](https://github.com/alibaba/designable/commit/dcffdeb) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.10(2021-09-27)
-
-### :beetle: Bug Fixes
-
-1. [fix(shared): fix batch add event conflict with multi engine](https://github.com/alibaba/designable/commit/a92f56b) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
