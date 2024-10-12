@@ -9,12 +9,6 @@
     "url": "git+https://github.com/alibaba/designable.git"
   },
   "types": "esm/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./esm/index.js",
-      "require": "./lib/index.js"
-    }
-  },
   "bugs": {
     "url": "https://github.com/alibaba/didesignable/issues"
   },
