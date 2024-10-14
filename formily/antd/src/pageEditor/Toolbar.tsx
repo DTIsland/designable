@@ -14,6 +14,7 @@ import { PageEditorContext, PageEditorType } from './Provider'
 import classNames from 'classnames'
 
 export interface IPageEditorToolbarProps extends Partial<HTMLDivElement> {
+  disableFlowChart: boolean
   layoutWidgets: IResourceLike[]
   normalWidgets: IResourceLike[]
   formWidgets: IResourceLike[]
@@ -27,6 +28,7 @@ export const PageEditorToolbar: React.FC<IPageEditorToolbarProps> = (props) => {
     layoutWidgets,
     normalWidgets,
     formWidgets,
+    disableFlowChart,
     className,
   } = props
 
@@ -99,14 +101,16 @@ export const PageEditorToolbar: React.FC<IPageEditorToolbarProps> = (props) => {
           }}
         >
           {renderToolbar()}
-          <Tooltip title={'流程图'}>
-            <PartitionOutlined
-              onClick={onSwitchPageType}
-              className={classNames('form-resource-item', {
-                active: isFlowChartPage,
-              })}
-            />
-          </Tooltip>
+          {!disableFlowChart && (
+            <Tooltip title={'流程图'}>
+              <PartitionOutlined
+                onClick={onSwitchPageType}
+                className={classNames('form-resource-item', {
+                  active: isFlowChartPage,
+                })}
+              />
+            </Tooltip>
+          )}
         </SourceBarPanel>
       )}
     </div>
