@@ -14,7 +14,7 @@ import { PageEditorContext, PageEditorType } from './Provider'
 import classNames from 'classnames'
 
 export interface IPageEditorToolbarProps extends Partial<HTMLDivElement> {
-  disableFlowChart: boolean
+  disableFlowChart?: boolean
   layoutWidgets: IResourceLike[]
   normalWidgets: IResourceLike[]
   formWidgets: IResourceLike[]
