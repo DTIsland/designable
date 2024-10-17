@@ -3,6 +3,7 @@ export const ArrayTable = {
     title: '自增表格',
     addSortHandle: '添加排序',
     addColumn: '添加列',
+    addRow: '添加行',
     addIndex: '添加索引',
     addOperation: '添加操作',
     settings: {

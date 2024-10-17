@@ -1,0 +1,23 @@
+.dn-report {
+  border-collapse: collapse; /* Ensures borders between cells are shared */
+  width: 100%;
+  background-color: var(--dn-white);
+
+  .dn-report-row,
+  .dn-report-col {
+    border: 1px;
+    border-style: solid;
+    border-color: var(--dn-white-gray-light);
+    background-color: inherit;
+  }
+
+  .dn-report-row {
+    height: 40px;
+  }
+
+  .dn-report-col {
+    padding: 4px 8px;
+    width: 100px;
+    height: 40px;
+  }
+}

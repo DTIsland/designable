@@ -279,7 +279,7 @@ export class Viewport {
   }
 
   isRectInViewport(rect: IRect) {
-    if (!this.rect) return false
+    if (!this.rect || !rect) return false
     if (!this.containsElement(document.elementFromPoint(rect.x, rect.y))) {
       return false
     }

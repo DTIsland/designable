@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 
-import { Button, ConfigProvider, Divider, Space } from 'antd'
+import { Button, Space, ConfigProvider, Divider } from 'antd'
 import zhCN from 'antd/locale/zh_CN'
 
 import {
@@ -23,14 +23,17 @@ import {
   TimePicker,
   SimpleUpload,
   Text,
+  Space as SpaceLayout,
   ObjectContainer,
   ArrayTable,
   FormLayout,
   FormGrid,
+  Report,
 } from '../src/components'
 ;(Text as any).Resource[0].showTitle = false
 ;(SimpleUpload as any).Resource[0].showTitle = false
 ;(ArrayTable as any).Resource[0].showTitle = false
+;(Report as any).Resource[0].showTitle = false
 
 const PageEditor = () => {
   const pageEditorCtx = useContext(PageEditorContext)
@@ -73,8 +76,8 @@ const PageEditor = () => {
         }}
       >
         <PageEditorToolbar
-          layoutWidgets={[FormLayout, FormGrid, ObjectContainer]}
-          normalWidgets={[Text, SimpleUpload, ArrayTable]}
+          layoutWidgets={[FormLayout, SpaceLayout, FormGrid, ObjectContainer]}
+          normalWidgets={[Text, SimpleUpload, ArrayTable, Report]}
           formWidgets={[
             Input,
             Password,

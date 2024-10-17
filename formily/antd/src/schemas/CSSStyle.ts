@@ -16,6 +16,10 @@ export const CSSStyle: ISchema = {
     'style.display': {
       'x-component': 'DisplayStyleSetter',
     },
+    'style.color': {
+      'x-decorator': 'FormItem',
+      'x-component': 'ColorInput',
+    },
     'style.background': {
       'x-component': 'BackgroundStyleSetter',
     },

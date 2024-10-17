@@ -40,6 +40,7 @@ import {
   TimePicker,
   Transfer,
   TreeSelect,
+  Report,
   Upload,
 } from '../components'
 
@@ -49,6 +50,7 @@ import { Graph } from '@antv/x6'
 import classNames from 'classnames'
 import 'dayjs/locale/zh-cn'
 import { PageEditorContext } from './Provider'
+import { SchemaEditorWidget } from './SchemaEditorWidget'
 
 export interface IPageEditorWorkbenchProps extends Partial<HTMLDivElement> {
   componentSources?: IDesignerComponents
@@ -79,6 +81,7 @@ const componentTree = {
   Space,
   FormTab,
   FormCollapse,
+  Report,
   FormGrid,
   FormLayout,
   ObjectContainer,
@@ -148,11 +151,16 @@ export const PageEditorWorkbench: React.FC<IPageEditorWorkbenchProps> = (
             <WorkspacePanel>
               <ToolbarPanel>
                 <DesignerToolsWidget />
-                <ViewToolsWidget use={['DESIGNABLE', 'PREVIEW']} />
+                <ViewToolsWidget use={['DESIGNABLE', 'JSONTREE', 'PREVIEW']} />
               </ToolbarPanel>
               <ViewportPanel style={{ height: '100%' }}>
                 <ViewPanel type="DESIGNABLE">
                   {() => <ComponentTreeWidget components={componentTree} />}
+                </ViewPanel>
+                <ViewPanel type="JSONTREE" scrollable={false}>
+                  {(tree, onChange) => (
+                    <SchemaEditorWidget tree={tree} onChange={onChange} />
+                  )}
                 </ViewPanel>
                 <ViewPanel type="PREVIEW">
                   {(tree) => <PreviewWidget tree={tree} />}

@@ -11,6 +11,7 @@ import 'dayjs/locale/zh-cn'
 import zhCN from 'antd/locale/zh_CN'
 import PageEditor from './page'
 import './styles.css'
+import { Demo } from './demo'
 
 dayjs.locale('zh-cn')
 
@@ -26,6 +27,9 @@ const App = () => {
     >
       <Router>
         <Switch>
+          <Route path="/demo">
+            <Demo />
+          </Route>
           <Route path="/custom">
             <Custom />
           </Route>

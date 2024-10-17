@@ -11,6 +11,7 @@ import classNames from 'classnames'
 import 'dayjs/locale/zh-cn'
 import { GraphSettingsForm } from '../components/FlowChart/SettingsForm'
 import { PageEditorContext } from './Provider'
+import { Report } from '../components'
 
 export interface IPageEditorRightPanelProps extends Partial<HTMLDivElement> {
   extraTabs?: Tab[]
@@ -58,7 +59,14 @@ export const PageEditorRightPanel: React.FC<IPageEditorRightPanelProps> = (
     {
       label: '属性',
       key: '1',
-      children: <SettingsForm uploadAction={uploadAction} />,
+      children: (
+        <SettingsForm
+          uploadAction={uploadAction}
+          components={{
+            Report,
+          }}
+        />
+      ),
     },
     {
       key: '2',

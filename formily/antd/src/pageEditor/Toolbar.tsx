@@ -63,7 +63,10 @@ export const PageEditorToolbar: React.FC<IPageEditorToolbarProps> = (props) => {
           placement="bottom"
         >
           <Tooltip title={'布局组件'}>
-            <LayoutOutlined className="form-resource-item form-resource-dropdown-item" />
+            <LayoutOutlined
+              className="form-resource-item form-resource-dropdown-item"
+              style={{ marginRight: 20 }}
+            />
           </Tooltip>
         </Dropdown>
         <SimpleResourceWidget sources={normalWidgets} />
@@ -81,9 +84,22 @@ export const PageEditorToolbar: React.FC<IPageEditorToolbarProps> = (props) => {
           placement="bottom"
         >
           <Tooltip title={'表单组件'}>
-            <FontSizeOutlined className="form-resource-item form-resource-dropdown-item" />
+            <FontSizeOutlined
+              className="form-resource-item form-resource-dropdown-item"
+              style={{ marginRight: 20 }}
+            />
           </Tooltip>
         </Dropdown>
+        {!disableFlowChart && (
+          <Tooltip title={'流程图'}>
+            <PartitionOutlined
+              onClick={onSwitchPageType}
+              className={classNames('form-resource-item', {
+                active: isFlowChartPage,
+              })}
+            />
+          </Tooltip>
+        )}
       </>
     )
   }
@@ -96,21 +112,10 @@ export const PageEditorToolbar: React.FC<IPageEditorToolbarProps> = (props) => {
         <SourceBarPanel
           style={{
             display: 'flex',
-            gap: '20px',
             fontSize: '18px',
           }}
         >
           {renderToolbar()}
-          {!disableFlowChart && (
-            <Tooltip title={'流程图'}>
-              <PartitionOutlined
-                onClick={onSwitchPageType}
-                className={classNames('form-resource-item', {
-                  active: isFlowChartPage,
-                })}
-              />
-            </Tooltip>
-          )}
         </SourceBarPanel>
       )}
     </div>

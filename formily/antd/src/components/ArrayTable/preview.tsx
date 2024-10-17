@@ -53,6 +53,7 @@ const BodyCell: React.FC = (props: any) => {
 export const ArrayTable: DnFC<TableProps<any>> = observer((props) => {
   const node = useTreeNode()
   const nodeId = useNodeIdProps()
+
   useDropTemplate('ArrayTable', (source) => {
     const sortHandleNode = new TreeNode({
       componentName: 'Field',
@@ -162,6 +163,7 @@ export const ArrayTable: DnFC<TableProps<any>> = observer((props) => {
     '*',
     'ArrayTable.Column',
   ])
+  // Add new Row Addition node
   const additions = queryNodesByComponentPath(node, [
     'ArrayTable',
     'ArrayTable.Addition',
@@ -182,7 +184,7 @@ export const ArrayTable: DnFC<TableProps<any>> = observer((props) => {
           className={cls('ant-formily-array-table', props.className)}
           style={{ marginBottom: 10, ...props.style }}
           rowKey={defaultRowKey}
-          dataSource={[{ id: '1' }]}
+          dataSource={[{ id: 1 }]}
           pagination={false}
           components={{
             header: {

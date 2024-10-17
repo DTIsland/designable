@@ -14,6 +14,7 @@ export interface IDroppableWidgetProps {
   actions?: INodeActionsWidgetActionProps[]
   placeholder?: boolean
   height?: number
+  width?: number
   style?: React.CSSProperties
   className?: string
   hasChildren?: boolean
@@ -24,6 +25,7 @@ export const DroppableWidget: React.FC<IDroppableWidgetProps> = observer(
     node,
     actions,
     height,
+    width,
     placeholder,
     style,
     className,
@@ -39,7 +41,7 @@ export const DroppableWidget: React.FC<IDroppableWidgetProps> = observer(
         {hasChildren ? (
           props.children
         ) : placeholder ? (
-          <div style={{ height }} className="dn-droppable-placeholder">
+          <div style={{ height, width }} className="dn-droppable-placeholder">
             <NodeTitleWidget node={target} />
           </div>
         ) : (

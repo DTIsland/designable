@@ -29,9 +29,10 @@ import {
   ArrayTable,
   ArrayCards,
 } from '@formily/antd-v5'
-import { Card, Slider, Rate } from 'antd'
+import { Card, Slider, Row, Col, Rate } from 'antd'
 import { TreeNode } from '@didesignable/core'
 import { transformToSchema } from '@didesignable/formily-transformer'
+import { Report, ReportRow, ReportCol } from '../components/Report/component'
 
 const Text: React.FC<{
   value?: string
@@ -72,6 +73,11 @@ const SchemaField = createSchemaField({
     Upload,
     Card,
     Slider,
+    Row,
+    Col,
+    Report,
+    ReportRow,
+    ReportCol,
     Rate,
   },
 })
