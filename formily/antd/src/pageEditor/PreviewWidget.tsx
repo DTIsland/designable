@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import { createForm } from '@formily/core'
 import { createSchemaField } from '@formily/react'
+import { Form as FormilyForm } from '@formily/core/esm/models'
 import {
   Form,
   FormItem,
@@ -84,11 +85,15 @@ const SchemaField = createSchemaField({
 
 export interface IPreviewWidgetProps {
   tree: TreeNode
+  formRef?: (form: FormilyForm<any>) => void
 }
 
 export const PreviewWidget: React.FC<IPreviewWidgetProps> = (props) => {
   const form = useMemo(() => createForm(), [])
   const { form: formProps, schema } = transformToSchema(props.tree)
+  if (props.formRef) {
+    props.formRef(form)
+  }
   return (
     <Form {...formProps} form={form}>
       <SchemaField schema={schema} />
