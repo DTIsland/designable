@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.0-beta.52(2024-10-17)
+
+### :tada: Enhancements
+
+1. [feat: add Report compnent](https://github.com/alibaba/designable/commit/fe33ffb) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [feat: optional the disableFlowChart](https://github.com/alibaba/designable/commit/ccfc793) :point_right: ( [wewoor](https://github.com/wewoor) )
+
 ## v1.0.0-beta.51(2024-10-12)
 
 ### :hammer_and_wrench: Update Workflow Scripts
@@ -465,9 +473,3 @@
 ### :blush: Other Changes
 
 1. [chore(react): improve theme styles](https://github.com/alibaba/designable/commit/f45572d) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.12(2021-09-30)
-
-### :tada: Enhancements
-
-1. [feat(react): add more source icons](https://github.com/alibaba/designable/commit/75963da) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )

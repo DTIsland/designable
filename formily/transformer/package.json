@@ -1,6 +1,6 @@
 {
   "name": "@didesignable/formily-transformer",
-  "version": "1.0.0-beta.52",
+  "version": "1.0.0-beta.53",
   "license": "MIT",
   "main": "lib",
   "engines": {
@@ -39,8 +39,8 @@
     "@formily/json-schema": "^2.0.2"
   },
   "dependencies": {
-    "@didesignable/core": "1.0.0-beta.52",
-    "@didesignable/shared": "1.0.0-beta.52"
+    "@didesignable/core": "1.0.0-beta.53",
+    "@didesignable/shared": "1.0.0-beta.53"
   },
   "gitHead": "47e2152bc7f541f933f6d2120837bb5f943aeef7"
 }
