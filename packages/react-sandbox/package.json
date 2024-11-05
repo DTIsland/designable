@@ -1,6 +1,6 @@
 {
   "name": "@didesignable/react-sandbox",
-  "version": "1.0.0-beta.53",
+  "version": "1.0.0-beta.54",
   "license": "MIT",
   "main": "lib",
   "types": "lib/index.d.ts",
@@ -31,8 +31,8 @@
     "react": "16.x || 17.x"
   },
   "dependencies": {
-    "@didesignable/react": "1.0.0-beta.53",
-    "@didesignable/shared": "1.0.0-beta.53"
+    "@didesignable/react": "1.0.0-beta.54",
+    "@didesignable/shared": "1.0.0-beta.54"
   },
   "publishConfig": {
     "access": "public"

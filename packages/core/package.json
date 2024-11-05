@@ -1,6 +1,6 @@
 {
   "name": "@didesignable/core",
-  "version": "1.0.0-beta.53",
+  "version": "1.0.0-beta.54",
   "license": "MIT",
   "main": "lib",
   "types": "lib/index.d.ts",
@@ -39,7 +39,7 @@
     "@formily/reactive": "^2.0.2"
   },
   "dependencies": {
-    "@didesignable/shared": "1.0.0-beta.53",
+    "@didesignable/shared": "1.0.0-beta.54",
     "@juggle/resize-observer": "^3.3.1"
   },
   "publishConfig": {

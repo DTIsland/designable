@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0-beta.53(2024-11-01)
+
+### :beetle: Bug Fixes
+
+1. [fix: update schema filed](https://github.com/alibaba/designable/commit/c3aa083) :point_right: ( [wewoor](https://github.com/wewoor) )
+
 ## v1.0.0-beta.52(2024-10-17)
 
 ### :tada: Enhancements
@@ -467,9 +473,3 @@
 ### :blush: Other Changes
 
 1. [chore(react): improve theme styles](https://github.com/alibaba/designable/commit/51a0fde) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.13(2021-10-04)
-
-### :blush: Other Changes
-
-1. [chore(react): improve theme styles](https://github.com/alibaba/designable/commit/f45572d) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
