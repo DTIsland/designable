@@ -22,14 +22,14 @@ export interface IFlowChartProps extends Partial<HTMLDivElement> {
   graphRef?: (graph: Graph) => void
 }
 
-function getRandomPosition(x, y) {
+export function getRandomPosition(x, y) {
   return {
     x: x + getRandomArbitrary(10, 100),
     y: y + getRandomArbitrary(10, 100),
   }
 }
 
-function getRandomArbitrary(min, max) {
+export function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min
 }
 
@@ -113,7 +113,7 @@ const PORTS = {
   ],
 }
 
-const getNode = (
+export const getNode = (
   id: string,
   options?: Node.Metadata,
   graphMode: FlowChartModeType = 'edit'
@@ -262,8 +262,10 @@ export class FlowChart extends React.Component<IFlowChartProps> {
   }
 
   private initData = () => {
-    this.graph.addNodes(this.props.data.nodes)
-    this.graph.addEdges(this.props.data.edges)
+    if (this.props.data.nodes && this.props.data.nodes.length > 0) {
+      this.graph.addNodes(this.props.data.nodes)
+      this.graph.addEdges(this.props.data.edges)
+    }
   }
 
   private initEvents = () => {
