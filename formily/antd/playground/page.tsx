@@ -45,6 +45,14 @@ const PageEditor = () => {
     }
   }
 
+  const switchPage = () => {
+    if (pageEditorCtx) {
+      pageEditorCtx.setPageType?.(
+        pageEditorCtx.pageType === 'form' ? 'flowchart' : 'form'
+      )
+    }
+  }
+
   useEffect(() => {
     if (pageEditorCtx) {
       loadInitialPage(pageEditorCtx)
@@ -62,6 +70,7 @@ const PageEditor = () => {
       >
         <span> Page Editor</span>
         <Button onClick={onSave}>Save</Button>
+        <Button onClick={switchPage}>切换</Button>
       </Space>
       <Divider />
       <div
