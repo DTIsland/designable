@@ -32,6 +32,7 @@ export interface PageEngineCtx {
   initGraphRef: (graph: Graph) => void
   initFormInstance: (form: FormInstance<any>) => void
   onSwitchPageType?: () => void
+  setPageType?: (type: PageEditorType) => void
 }
 
 export interface IPageEditorProps {
@@ -75,28 +76,33 @@ export class PageEditorProvider extends React.Component<IPageEditorProps> {
   }
 
   getData = (): PageDataType => {
+    const { pageType } = this.state
     const { engine, flowChartEngine } = this
-    let data = {
-      formData: {},
-      flowchartData: {
-        nodes: [],
-        edges: [],
-      },
+    let data = null
+    if (pageType === 'form' && engine) {
+      data = {
+        formData: transformToSchema(engine.getCurrentTree()),
+      }
     }
-    if (engine) {
-      data.formData = transformToSchema(engine.getCurrentTree())
-    }
-    if (flowChartEngine) {
-      data.flowchartData.nodes = flowChartEngine.getNodes()
-      data.flowchartData.edges = flowChartEngine.getEdges()
+    if (pageType === 'flowchart' && flowChartEngine) {
+      data = {
+        flowchartData: {
+          nodes: flowChartEngine.getNodes(),
+          edges: flowChartEngine.getEdges(),
+        },
+      }
     }
     this.data = data
     return data
   }
 
   setData = (data: PageDataType) => {
-    this.setFormSchema(data.formData)
-    this.setFlowChartData(data.flowchartData)
+    if (data.formData) {
+      this.setFormSchema(data.formData)
+    }
+    if (data.flowchartData) {
+      this.setFlowChartData(data.flowchartData)
+    }
     this.data = data
   }
 
@@ -123,12 +129,14 @@ export class PageEditorProvider extends React.Component<IPageEditorProps> {
     })
   }
 
-  initGraphRef = (graph: Graph) => {
-    this.flowChartEngine = graph
+  setPageType = (type: PageEditorType) => {
+    this.setState({
+      pageType: type,
+    })
   }
 
-  onFlowChartChange = () => {
-    // this.setFlowChartData(data)
+  initGraphRef = (graph: Graph) => {
+    this.flowChartEngine = graph
   }
 
   initFormInstance = (form: FormInstance<any>) => {
@@ -154,6 +162,7 @@ export class PageEditorProvider extends React.Component<IPageEditorProps> {
               initGraphRef: this.initGraphRef,
               initFormInstance: this.initFormInstance,
               onSwitchPageType: this.onSwitchPageType,
+              setPageType: this.setPageType,
               data: this.data,
             }}
           >
