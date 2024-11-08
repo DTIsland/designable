@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0-beta.54(2024-11-05)
+
+### :beetle: Bug Fixes
+
+1. [fix: export flowgraph](https://github.com/alibaba/designable/commit/8b285e9) :point_right: ( [wewoor](https://github.com/wewoor) )
+
 ## v1.0.0-beta.53(2024-11-01)
 
 ### :beetle: Bug Fixes
@@ -467,9 +473,3 @@
 ### :beetle: Bug Fixes
 
 1. [fix(react): fix styles](https://github.com/alibaba/designable/commit/19df7b2) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.14(2021-10-04)
-
-### :blush: Other Changes
-
-1. [chore(react): improve theme styles](https://github.com/alibaba/designable/commit/51a0fde) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
