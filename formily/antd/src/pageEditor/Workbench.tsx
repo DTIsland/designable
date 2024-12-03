@@ -51,9 +51,12 @@ import classNames from 'classnames'
 import 'dayjs/locale/zh-cn'
 import { PageEditorContext } from './Provider'
 import { SchemaEditorWidget } from './SchemaEditorWidget'
+import { IUploadProps } from '@formily/antd-v5'
 
 export interface IPageEditorWorkbenchProps extends Partial<HTMLDivElement> {
+  className?: string
   componentSources?: IDesignerComponents
+  previewUploadProps?: IUploadProps
 }
 
 const componentTree = {
@@ -90,7 +93,7 @@ const componentTree = {
 export const PageEditorWorkbench: React.FC<IPageEditorWorkbenchProps> = (
   props
 ) => {
-  const { className, componentSources } = props
+  const { className, componentSources, previewUploadProps } = props
 
   const pageEditorCtx = useContext(PageEditorContext)
   const { flowchartEngine, formInstance, pageType, initGraphRef } =
@@ -163,7 +166,12 @@ export const PageEditorWorkbench: React.FC<IPageEditorWorkbenchProps> = (
                   )}
                 </ViewPanel>
                 <ViewPanel type="PREVIEW">
-                  {(tree) => <PreviewWidget tree={tree} />}
+                  {(tree) => (
+                    <PreviewWidget
+                      tree={tree}
+                      uploadProps={previewUploadProps}
+                    />
+                  )}
                 </ViewPanel>
               </ViewportPanel>
             </WorkspacePanel>

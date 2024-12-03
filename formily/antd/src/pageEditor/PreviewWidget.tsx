@@ -29,6 +29,7 @@ import {
   FormCollapse,
   ArrayTable,
   ArrayCards,
+  IUploadProps,
 } from '@formily/antd-v5'
 import { Card, Slider, Row, Col, Rate } from 'antd'
 import { TreeNode } from '@didesignable/core'
@@ -44,48 +45,10 @@ const Text: React.FC<{
   return React.createElement(tagName, props, value || content)
 }
 
-const SchemaField = createSchemaField({
-  components: {
-    Space,
-    FormGrid,
-    FormLayout,
-    FormTab,
-    FormCollapse,
-    ArrayTable,
-    ArrayCards,
-    FormItem,
-    DatePicker,
-    Checkbox,
-    Cascader,
-    Editable,
-    Input,
-    Text,
-    NumberPicker,
-    Switch,
-    Password,
-    PreviewText,
-    Radio,
-    Reset,
-    Select,
-    Submit,
-    TimePicker,
-    Transfer,
-    TreeSelect,
-    Upload,
-    Card,
-    Slider,
-    Row,
-    Col,
-    Report,
-    ReportRow,
-    ReportCol,
-    Rate,
-  },
-})
-
 export interface IPreviewWidgetProps {
   tree: TreeNode
   formProps?: IFormProps
+  uploadProps?: IUploadProps
   formRef?: (form: FormilyForm<any>) => void
 }
 
@@ -95,6 +58,50 @@ export const PreviewWidget: React.FC<IPreviewWidgetProps> = (props) => {
   if (props.formRef) {
     props.formRef(form)
   }
+
+  Upload.defaultProps = {
+    ...props.uploadProps,
+  }
+
+  const SchemaField = createSchemaField({
+    components: {
+      Space,
+      FormGrid,
+      FormLayout,
+      FormTab,
+      FormCollapse,
+      ArrayTable,
+      ArrayCards,
+      FormItem,
+      DatePicker,
+      Checkbox,
+      Cascader,
+      Editable,
+      Input,
+      Text,
+      NumberPicker,
+      Switch,
+      Password,
+      PreviewText,
+      Radio,
+      Reset,
+      Select,
+      Submit,
+      TimePicker,
+      Transfer,
+      TreeSelect,
+      Upload,
+      Card,
+      Slider,
+      Row,
+      Col,
+      Report,
+      ReportRow,
+      ReportCol,
+      Rate,
+    },
+  })
+
   return (
     <Form {...formProps} form={form}>
       <SchemaField schema={schema} />

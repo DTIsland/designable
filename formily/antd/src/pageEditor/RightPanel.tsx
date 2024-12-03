@@ -16,12 +16,13 @@ import { Report } from '../components'
 export interface IPageEditorRightPanelProps extends Partial<HTMLDivElement> {
   extraTabs?: Tab[]
   uploadAction?: string
+  uploadHeaders?: Record<string, any>
 }
 
 export const PageEditorRightPanel: React.FC<IPageEditorRightPanelProps> = (
   props
 ) => {
-  const { uploadAction, extraTabs, className } = props
+  const { uploadAction, uploadHeaders, extraTabs, className } = props
 
   const pageEditorCtx = React.useContext(PageEditorContext)
   const { pageType, flowchartEngine, initFormInstance } = pageEditorCtx
@@ -62,6 +63,7 @@ export const PageEditorRightPanel: React.FC<IPageEditorRightPanelProps> = (
       children: (
         <SettingsForm
           uploadAction={uploadAction}
+          uploadHeaders={uploadHeaders}
           components={{
             Report,
           }}
