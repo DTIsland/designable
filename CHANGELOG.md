@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0-beta.56(2024-12-03)
+
+### :beetle: Bug Fixes
+
+1. [fix: provide upload props api](https://github.com/alibaba/designable/commit/b6208d9) :point_right: ( [wewoor](https://github.com/wewoor) )
+
 ## v1.0.0-beta.55(2024-11-08)
 
 ### :tada: Enhancements
@@ -471,9 +477,3 @@
 1. [chore(shared): improve element layout calculator](https://github.com/alibaba/designable/commit/f29ec8a) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
 
 1. [chore(core): improve remove](https://github.com/alibaba/designable/commit/8eeed0a) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.16(2021-10-06)
-
-### :blush: Other Changes
-
-1. [chore(core): improve dnd](https://github.com/alibaba/designable/commit/f59b65e) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
