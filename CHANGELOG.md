@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.0.0-beta.55(2024-11-08)
+
+### :tada: Enhancements
+
+1. [feat: support pageType](https://github.com/alibaba/designable/commit/b08ee29) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+### :construction: Add/Update Test Cases
+
+1. [test: switch page type](https://github.com/alibaba/designable/commit/bdb45c8) :point_right: ( [wewoor](https://github.com/wewoor) )
+
 ## v1.0.0-beta.54(2024-11-05)
 
 ### :beetle: Bug Fixes
@@ -467,9 +477,3 @@
 ### :blush: Other Changes
 
 1. [chore(core): improve dnd](https://github.com/alibaba/designable/commit/f59b65e) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.15(2021-10-04)
-
-### :beetle: Bug Fixes
-
-1. [fix(react): fix styles](https://github.com/alibaba/designable/commit/19df7b2) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
