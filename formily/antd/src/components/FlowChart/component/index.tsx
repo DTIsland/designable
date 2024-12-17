@@ -371,9 +371,14 @@ export class FlowChart extends React.Component<IFlowChartProps> {
   }
 
   render() {
-    const { className, style } = this.props
+    const { className, style, title, role } = this.props
     return (
-      <div className={classNames('xgraph', className)}>
+      <div
+        className={classNames('xgraph', className)}
+        style={style}
+        title={title}
+        role={role}
+      >
         <div className="graph-content" ref={this.refContainer} />
       </div>
     )
