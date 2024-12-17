@@ -12,6 +12,7 @@ import zhCN from 'antd/locale/zh_CN'
 import PageEditor from './page'
 import './styles.css'
 import { Demo } from './demo'
+import { FlowChartDemo } from './flowchart'
 
 dayjs.locale('zh-cn')
 
@@ -27,6 +28,9 @@ const App = () => {
     >
       <Router>
         <Switch>
+          <Route path="/flowchart">
+            <FlowChartDemo />
+          </Route>
           <Route path="/demo">
             <Demo />
           </Route>

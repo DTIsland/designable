@@ -15,11 +15,16 @@ export interface IFlowChartData {
   edges: Edge[]
 }
 
-export interface IFlowChartProps extends Partial<HTMLDivElement> {
+export interface IFlowChartProps {
   mode: 'edit' | 'view'
   options?: Graph.Options
   data?: IFlowChartData
   graphRef?: (graph: Graph) => void
+  onChange?: (data: IFlowChartData) => void
+  className?: string
+  style?: React.CSSProperties
+  title?: string
+  role?: string
 }
 
 export function getRandomPosition(x, y) {
@@ -204,6 +209,17 @@ export class FlowChart extends React.Component<IFlowChartProps> {
     this.initData()
   }
 
+  componentDidUpdate(
+    prevProps: Readonly<IFlowChartProps>,
+    prevState: Readonly<{}>,
+    snapshot?: any
+  ): void {
+    if (prevProps.data !== this.props.data) {
+      this.graph.clearCells()
+      this.initData()
+    }
+  }
+
   private initGraph = () => {
     this.graph = new Graph({
       container: this.container,
@@ -289,6 +305,15 @@ export class FlowChart extends React.Component<IFlowChartProps> {
       }
     })
 
+    this.graph.on('cell:change:*', ({ cell }) => {
+      if (cell.isEdge() || cell.isNode()) {
+        this.props.onChange?.({
+          nodes: this.graph.getNodes(),
+          edges: this.graph.getEdges(),
+        })
+      }
+    })
+
     if (this.props.mode === 'edit') {
       // Delete
       graph.bindKey('backspace', () => {
@@ -303,6 +328,10 @@ export class FlowChart extends React.Component<IFlowChartProps> {
       graph.on('add:node', ({ cell }: any) => {
         const pos = cell.position()
         this.createNode(pos.x, pos.y)
+        this.props.onChange?.({
+          nodes: this.graph.getNodes(),
+          edges: this.graph.getEdges(),
+        })
       })
     }
   }
@@ -342,7 +371,7 @@ export class FlowChart extends React.Component<IFlowChartProps> {
   }
 
   render() {
-    const { className } = this.props
+    const { className, style } = this.props
     return (
       <div className={classNames('xgraph', className)}>
         <div className="graph-content" ref={this.refContainer} />
