@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.0-beta.59(2025-04-14)
+
+### :tada: Enhancements
+
+1. [feat: add engineProps](https://github.com/alibaba/designable/commit/6466add) :point_right: ( [wewoor](https://github.com/wewoor) )
+
+1. [feat: add uploadOnChangePreHandle](https://github.com/alibaba/designable/commit/826daf3) :point_right: ( [wewoor](https://github.com/wewoor) )
+
 ## v1.0.0-beta.58(2024-12-17)
 
 ### :tada: Enhancements
@@ -463,9 +471,3 @@
 ### :beetle: Bug Fixes
 
 1. [fix(react): fix CompositePanel](https://github.com/alibaba/designable/commit/84e8dfb) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.19(2021-10-08)
-
-### :beetle: Bug Fixes
-
-1. [fix(react): fix CompositePanel](https://github.com/alibaba/designable/commit/3708613) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
