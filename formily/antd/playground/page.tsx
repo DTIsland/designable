@@ -30,6 +30,7 @@ import {
   FormGrid,
   Report,
 } from '../src/components'
+import { Engine, IEngineProps, KeyCode, Shortcut } from '@didesignable/core'
 ;(Text as any).Resource[0].showTitle = false
 ;(SimpleUpload as any).Resource[0].showTitle = false
 ;(ArrayTable as any).Resource[0].showTitle = false
@@ -118,6 +119,22 @@ const PageEditor = () => {
 }
 
 export const Page: React.FC<{}> = () => {
+  const engineProps: IEngineProps<Engine> = {
+    shortcuts: [
+      new Shortcut({
+        codes: [
+          [KeyCode.Meta, KeyCode.S],
+          [KeyCode.Control, KeyCode.S],
+        ],
+        // handler(ctx) {
+        // },
+      }),
+    ],
+    // effects: [(a) => {
+    //   console.log('effects', a)
+    // }],
+  }
+
   return (
     <ConfigProvider
       locale={zhCN}
@@ -127,7 +144,7 @@ export const Page: React.FC<{}> = () => {
         },
       }}
     >
-      <PageEditorProvider>
+      <PageEditorProvider engineProps={engineProps}>
         <PageEditor />
       </PageEditorProvider>
     </ConfigProvider>

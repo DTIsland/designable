@@ -1,6 +1,12 @@
 import { Designer } from '@didesignable/react'
 import React, { createContext } from 'react'
-import { createDesigner, Engine, KeyCode, Shortcut } from '@didesignable/core'
+import {
+  createDesigner,
+  Engine,
+  IEngineProps,
+  KeyCode,
+  Shortcut,
+} from '@didesignable/core'
 import classNames from 'classnames'
 import 'dayjs/locale/zh-cn'
 import './styles.less'
@@ -36,6 +42,7 @@ export interface PageEngineCtx {
 }
 
 export interface IPageEditorProps {
+  engineProps?: IEngineProps<Engine>
   children?: React.ReactNode | Element
   className?: string
 }
@@ -52,16 +59,16 @@ export class PageEditorProvider extends React.Component<IPageEditorProps> {
     pageType: PageEditorType
   }>
 
-  constructor(props) {
+  constructor(props: IPageEditorProps) {
     super(props)
     this.state = {
       mode: 'edit',
       pageType: 'form',
     }
-    this.init()
+    this.init(props.engineProps)
   }
 
-  init = () => {
+  init = (engineProps) => {
     this.engine = createDesigner({
       shortcuts: [
         new Shortcut({
@@ -72,6 +79,7 @@ export class PageEditorProvider extends React.Component<IPageEditorProps> {
         }),
       ],
       rootComponentName: 'Form',
+      ...engineProps,
     })
   }
 
