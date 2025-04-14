@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0-beta.60(2025-04-14)
+
+### :beetle: Bug Fixes
+
+1. [fix: add uploadOnChangePreHandle in IPageEditorRightPanelProps](https://github.com/alibaba/designable/commit/367e94a) :point_right: ( [wewoor](https://github.com/wewoor) )
+
 ## v1.0.0-beta.59(2025-04-14)
 
 ### :tada: Enhancements
@@ -465,9 +471,3 @@
 ### :beetle: Bug Fixes
 
 1. [fix(react): fix CompositePanel](https://github.com/alibaba/designable/commit/bf4ba3f) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.20(2021-10-08)
-
-### :beetle: Bug Fixes
-
-1. [fix(react): fix CompositePanel](https://github.com/alibaba/designable/commit/84e8dfb) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
