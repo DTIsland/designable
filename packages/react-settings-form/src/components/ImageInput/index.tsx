@@ -31,7 +31,10 @@ export const ImageInput: React.FC<ImageInputProps> = ({
             itemRender={() => null}
             maxCount={1}
             onChange={(params: any) => {
-              const response = params.file?.response
+              const preHandleOnChangeParams = context.uploadOnChangePreHandle
+                ? context.uploadOnChangePreHandle(params)
+                : params
+              const response = preHandleOnChangeParams.file?.originFileObj
               const url =
                 response?.url ||
                 response?.downloadURL ||
