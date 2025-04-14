@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0-beta.58(2024-12-17)
+
+### :tada: Enhancements
+
+1. [feat: provide flowchart onchange api](https://github.com/alibaba/designable/commit/e22b0be) :point_right: ( [wewoor](https://github.com/wewoor) )
+
 ## v1.0.0-beta.57(2024-12-03)
 
 ### No Change Log
@@ -463,9 +469,3 @@
 ### :beetle: Bug Fixes
 
 1. [fix(react): fix CompositePanel](https://github.com/alibaba/designable/commit/3708613) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.18(2021-10-08)
-
-### :beetle: Bug Fixes
-
-1. [fix(react): fix CompositePanel](https://github.com/alibaba/designable/commit/03eb84d) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )

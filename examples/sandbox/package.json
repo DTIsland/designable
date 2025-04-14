@@ -1,6 +1,6 @@
 {
   "name": "@didesignable/sandbox-example",
-  "version": "1.0.0-beta.58",
+  "version": "1.0.0-beta.59",
   "license": "MIT",
   "private": true,
   "engines": {
@@ -25,11 +25,11 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
-    "@didesignable/core": "1.0.0-beta.58",
-    "@didesignable/react": "1.0.0-beta.58",
-    "@didesignable/react-sandbox": "1.0.0-beta.58",
-    "@didesignable/react-settings-form": "1.0.0-beta.58",
-    "@didesignable/shared": "1.0.0-beta.58",
+    "@didesignable/core": "1.0.0-beta.59",
+    "@didesignable/react": "1.0.0-beta.59",
+    "@didesignable/react-sandbox": "1.0.0-beta.59",
+    "@didesignable/react-settings-form": "1.0.0-beta.59",
+    "@didesignable/shared": "1.0.0-beta.59",
     "@formily/reactive": "^2.0.2",
     "@formily/reactive-react": "^2.0.2",
     "antd": "^4.15.2",
