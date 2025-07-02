@@ -1,8 +1,8 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import dayjs from 'dayjs'
 import { ConfigProvider } from 'antd'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
-import { createRoot } from 'react-dom/client'
 import Home from './home'
 import Custom from './custom'
 
@@ -11,7 +11,7 @@ import 'dayjs/locale/zh-cn'
 import zhCN from 'antd/locale/zh_CN'
 import PageEditor from './page'
 import './styles.css'
-import { Demo } from './demo'
+import Demo from './demo'
 import { FlowChartDemo } from './flowchart'
 
 dayjs.locale('zh-cn')
@@ -49,6 +49,4 @@ const App = () => {
   )
 }
 
-const root = createRoot(document.getElementById('root'))
-
-root.render(<App />)
+ReactDOM.render(<App />, document.getElementById('root'))

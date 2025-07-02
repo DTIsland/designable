@@ -35,6 +35,7 @@ import { Card, Slider, Row, Col, Rate } from 'antd'
 import { TreeNode } from '@didesignable/core'
 import { transformToSchema } from '@didesignable/formily-transformer'
 import { Report, ReportRow, ReportCol } from '../components/Report/component'
+import { RichTextEditor } from '../components/RichTextEditor'
 
 const Text: React.FC<{
   value?: string
@@ -99,6 +100,7 @@ export const PreviewWidget: React.FC<IPreviewWidgetProps> = (props) => {
       ReportRow,
       ReportCol,
       Rate,
+      RichTextEditor,
     },
   })
 

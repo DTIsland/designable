@@ -11,7 +11,7 @@ import classNames from 'classnames'
 import 'dayjs/locale/zh-cn'
 import { GraphSettingsForm } from '../components/FlowChart/SettingsForm'
 import { PageEditorContext } from './Provider'
-import { Report } from '../components'
+import { Report, RichTextEditorEditor } from '../components'
 
 export interface IPageEditorRightPanelProps extends Partial<HTMLDivElement> {
   extraTabs?: Tab[]
@@ -74,6 +74,7 @@ export const PageEditorRightPanel: React.FC<IPageEditorRightPanelProps> = (
           uploadOnChangePreHandle={uploadOnChangePreHandle}
           components={{
             Report,
+            RichTextEditorEditor,
           }}
         />
       ),

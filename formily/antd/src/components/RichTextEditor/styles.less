@@ -1,6 +1,931 @@
 .rich-text-editor {
-  .editor {
+  // CKEditor 5 容器样式
+  .ck.ck-editor {
     border: 1px solid #d9d9d9;
     border-radius: 4px;
+    background: #fff;
+  }
+
+  // 工具栏样式
+  .ck.ck-toolbar {
+    border-bottom: 1px solid #d9d9d9;
+    background: #f5f5f5;
+    border-radius: 4px 4px 0 0;
+  }
+
+  // 编辑器内容区域
+  .ck.ck-editor__main {
+    .ck.ck-editor__editable {
+      border: none;
+      border-radius: 0 0 4px 4px;
+      min-height: 200px;
+      padding: 12px;
+      line-height: 1.6;
+      word-wrap: break-word;
+      word-break: break-all;
+
+      // 聚焦状态
+      &:focus {
+        box-shadow: none;
+        border: none;
+      }
+
+      // 只读状态
+      &.ck-read-only {
+        background: #f5f5f5;
+        cursor: default;
+      }
+    }
+  }
+
+  // 工具栏按钮样式优化
+  .ck.ck-toolbar__items {
+    .ck.ck-button {
+      border-radius: 4px;
+      transition: all 0.2s;
+
+      &:hover:not(.ck-disabled) {
+        background: #e6f7ff;
+        border-color: #40a9ff;
+      }
+
+      &.ck-on {
+        background: #bae7ff;
+        border-color: #40a9ff;
+      }
+    }
+
+    // 对齐工具特殊样式
+    .ck-dropdown .ck-dropdown__button {
+      min-width: 24px;
+
+      &[aria-label*='对齐'],
+      &[aria-label*='Align'],
+      &[aria-label*='정렬'] {
+        .ck-button__label {
+          width: 16px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  // 下拉菜单样式
+  .ck.ck-dropdown {
+    .ck.ck-dropdown__panel {
+      border: 1px solid #d9d9d9;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  // 只读模式样式
+  &.readonly {
+    .ck.ck-editor {
+      background: #f5f5f5;
+    }
+
+    .ck.ck-toolbar {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .ck.ck-editor__main .ck.ck-editor__editable {
+      background: #f5f5f5;
+      cursor: default;
+    }
+  }
+
+  // 悬停效果
+  &:hover:not(.readonly) {
+    .ck.ck-editor {
+      border-color: #40a9ff;
+    }
+  }
+
+  // 聚焦效果
+  &:focus-within:not(.readonly) {
+    .ck.ck-editor {
+      border-color: #40a9ff;
+      box-shadow: 0 0 0 2px rgba(64, 169, 255, 0.2);
+    }
+  }
+
+  // CKEditor 表格相关的特殊样式
+  .ck.ck-table-cell_selected {
+    background-color: #bae7ff !important;
+    border-color: #40a9ff !important;
+  }
+
+  .ck.ck-widget.table {
+    margin: 16px 0;
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+
+      // 确保表格在编辑器中正确显示
+      &:not(.ck-widget__selected) {
+        border: 1px solid #d9d9d9;
+      }
+    }
+  }
+
+  // 表格上下文工具栏样式
+  .ck.ck-balloon-panel {
+    .ck.ck-toolbar {
+      // 表格工具栏按钮样式
+      .ck-button {
+        &[class*='alignment'] {
+          min-width: 32px;
+
+          &.ck-on {
+            background: #bae7ff;
+            border-color: #40a9ff;
+          }
+        }
+
+        // 表格属性按钮样式
+        &[class*='tableProperties'],
+        &[class*='tableCellProperties'] {
+          .ck-button__icon {
+            color: #1890ff;
+          }
+
+          &:hover {
+            background: #e6f7ff;
+          }
+        }
+      }
+
+      // 分隔符样式
+      .ck-toolbar__separator {
+        margin: 0 4px;
+        background: #d9d9d9;
+        width: 1px;
+        height: 20px;
+      }
+    }
+  }
+
+  // 表格属性面板样式
+  .ck.ck-form {
+    .ck-form__header {
+      background: #f5f5f5;
+      border-bottom: 1px solid #d9d9d9;
+      padding: 12px 16px;
+
+      .ck-form__header__label {
+        font-weight: 600;
+        color: #262626;
+      }
+    }
+
+    .ck-form__row {
+      padding: 8px 16px;
+      border-bottom: 1px solid #f0f0f0;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .ck-label {
+        color: #595959;
+        font-size: 14px;
+      }
+    }
+  }
+
+  // 内容样式优化
+  .ck.ck-editor__main .ck.ck-editor__editable {
+    // 基本排版样式
+    p {
+      margin: 8px 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 16px 0 8px 0;
+      font-weight: bold;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    h3 {
+      font-size: 16px;
+    }
+    h4 {
+      font-size: 14px;
+    }
+
+    ul,
+    ol {
+      padding-left: 20px;
+      margin: 8px 0;
+    }
+
+    blockquote {
+      margin: 16px 0;
+      padding-left: 16px;
+      border-left: 4px solid #d9d9d9;
+      color: #666;
+      font-style: italic;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 16px 0;
+      font-size: 14px;
+
+      // 表格整体对齐样式
+      &[style*='text-align: center'] {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &[style*='text-align: right'] {
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      td,
+      th {
+        border: 1px solid #d9d9d9;
+        padding: 8px 12px;
+        text-align: left;
+        vertical-align: top;
+        word-wrap: break-word;
+        word-break: break-all;
+        min-width: 50px;
+
+        // 支持左对齐（默认）
+        &[style*='text-align: left'],
+        &[align='left'] {
+          text-align: left;
+        }
+
+        // 支持居中对齐
+        &[style*='text-align: center'],
+        &[align='center'] {
+          text-align: center;
+        }
+
+        // 支持右对齐
+        &[style*='text-align: right'],
+        &[align='right'] {
+          text-align: right;
+        }
+
+        // 支持两端对齐
+        &[style*='text-align: justify'],
+        &[align='justify'] {
+          text-align: justify;
+        }
+
+        // 支持垂直顶部对齐（默认）
+        &[style*='vertical-align: top'],
+        &[valign='top'] {
+          vertical-align: top;
+        }
+
+        // 支持垂直居中
+        &[style*='vertical-align: middle'],
+        &[valign='middle'] {
+          vertical-align: middle;
+        }
+
+        // 支持底部对齐
+        &[style*='vertical-align: bottom'],
+        &[valign='bottom'] {
+          vertical-align: bottom;
+        }
+      }
+
+      th {
+        background: #f5f5f5;
+        font-weight: bold;
+        color: #262626;
+        text-align: center;
+        position: relative;
+
+        // 确保表头在深色背景下也有足够的对比度
+        &[style*='background-color'] {
+          color: #262626 !important;
+        }
+
+        // 保持原有的对齐方式（如果指定了的话）
+        &[style*='text-align: left'],
+        &[align='left'] {
+          text-align: left;
+        }
+
+        &[style*='text-align: right'],
+        &[align='right'] {
+          text-align: right;
+        }
+
+        // 表头排序指示器样式（如果需要）
+        &.sortable {
+          cursor: pointer;
+          user-select: none;
+
+          &:hover {
+            background: #e6f7ff;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 4px solid #bfbfbf;
+            opacity: 0.5;
+          }
+        }
+
+        // 表头分组样式
+        &[colspan] {
+          text-align: center;
+          border-bottom: 2px solid #d9d9d9;
+        }
+      }
+
+      // 表头行样式
+      thead tr {
+        background: #f5f5f5;
+
+        &:hover {
+          background: #f0f0f0;
+        }
+
+        // 多级表头支持
+        & + tr th {
+          border-top: 1px solid #d9d9d9;
+        }
+      }
+
+      // 表格标题样式
+      caption {
+        padding: 8px;
+        font-weight: bold;
+        text-align: center;
+        border: 1px solid #d9d9d9;
+        border-bottom: none;
+        background: #fafafa;
+      }
+
+      // 斑马纹效果
+      tbody tr:nth-child(even) {
+        background-color: #fafafa;
+      }
+
+      // 悬停效果
+      tbody tr:hover {
+        background-color: #e6f7ff;
+      }
+
+      // 选中单元格效果
+      .ck-table-cell_selected {
+        background-color: #bae7ff !important;
+        border-color: #40a9ff !important;
+      }
+    }
+
+    a {
+      color: #1890ff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    strong,
+    b {
+      font-weight: bold;
+    }
+
+    em,
+    i {
+      font-style: italic;
+    }
+
+    u {
+      text-decoration: underline;
+    }
+  }
+}
+
+.rich-text-preview {
+  padding: 8px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background: #fafafa;
+  min-height: 32px;
+  word-wrap: break-word;
+  word-break: break-all;
+
+  &:empty::before {
+    content: '暂无内容';
+    color: #bfbfbf;
+  }
+
+  // 预览模式下的样式优化
+  p {
+    margin: 8px 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 16px 0 8px 0;
+    font-weight: bold;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  h4 {
+    font-size: 14px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 16px 0;
+    font-size: 14px;
+
+    // 表格整体对齐样式
+    &[style*='text-align: center'] {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &[style*='text-align: right'] {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    td,
+    th {
+      border: 1px solid #d9d9d9;
+      padding: 8px 12px;
+      text-align: left;
+      vertical-align: top;
+      word-wrap: break-word;
+      word-break: break-all;
+      min-width: 50px;
+
+      // 支持左对齐（默认）
+      &[style*='text-align: left'],
+      &[align='left'] {
+        text-align: left;
+      }
+
+      // 支持居中对齐
+      &[style*='text-align: center'],
+      &[align='center'] {
+        text-align: center;
+      }
+
+      // 支持右对齐
+      &[style*='text-align: right'],
+      &[align='right'] {
+        text-align: right;
+      }
+
+      // 支持两端对齐
+      &[style*='text-align: justify'],
+      &[align='justify'] {
+        text-align: justify;
+      }
+
+      // 支持垂直顶部对齐（默认）
+      &[style*='vertical-align: top'],
+      &[valign='top'] {
+        vertical-align: top;
+      }
+
+      // 支持垂直居中
+      &[style*='vertical-align: middle'],
+      &[valign='middle'] {
+        vertical-align: middle;
+      }
+
+      // 支持底部对齐
+      &[style*='vertical-align: bottom'],
+      &[valign='bottom'] {
+        vertical-align: bottom;
+      }
+    }
+
+    th {
+      background: #f5f5f5;
+      font-weight: bold;
+      color: #262626;
+      text-align: center;
+
+      // 确保表头在深色背景下也有足够的对比度
+      &[style*='background-color'] {
+        color: #262626 !important;
+      }
+
+      // 保持原有的对齐方式（如果指定了的话）
+      &[style*='text-align: left'],
+      &[align='left'] {
+        text-align: left;
+      }
+
+      &[style*='text-align: right'],
+      &[align='right'] {
+        text-align: right;
+      }
+
+      // 表头分组样式
+      &[colspan] {
+        text-align: center;
+        border-bottom: 2px solid #d9d9d9;
+      }
+    }
+
+    // 表头行样式
+    thead tr {
+      background: #f5f5f5;
+
+      // 多级表头支持
+      & + tr th {
+        border-top: 1px solid #d9d9d9;
+      }
+    }
+
+    // 表格标题样式
+    caption {
+      padding: 8px;
+      font-weight: bold;
+      text-align: center;
+      border: 1px solid #d9d9d9;
+      border-bottom: none;
+      background: #fafafa;
+    }
+
+    // 斑马纹效果
+    tbody tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+  }
+
+  blockquote {
+    margin: 16px 0;
+    padding-left: 16px;
+    border-left: 4px solid #d9d9d9;
+    color: #666;
+    font-style: italic;
+  }
+
+  ul,
+  ol {
+    padding-left: 20px;
+    margin: 8px 0;
+  }
+
+  a {
+    color: #1890ff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  strong,
+  b {
+    font-weight: bold;
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  u {
+    text-decoration: underline;
+  }
+}
+
+// 字数统计显示样式
+.rich-text-editor {
+  .word-count-display {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #666;
+    background-color: #fafafa;
+    border-top: 1px solid #d9d9d9;
+    border-radius: 0 0 6px 6px;
+
+    .characters,
+    .words {
+      margin-right: 16px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // 禁用状态样式
+  &.disabled {
+    .ck.ck-editor {
+      background: #f5f5f5;
+      cursor: not-allowed;
+    }
+
+    .ck.ck-toolbar {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .ck.ck-editor__main .ck.ck-editor__editable {
+      background: #f5f5f5;
+      cursor: not-allowed;
+    }
+  }
+
+  // 主题样式
+  &.theme-dark {
+    .ck.ck-editor {
+      background: #1f1f1f;
+      border-color: #434343;
+      color: #ffffff;
+    }
+
+    .ck.ck-toolbar {
+      background: #2d2d2d;
+      border-color: #434343;
+    }
+
+    .ck.ck-editor__main .ck.ck-editor__editable {
+      background: #1f1f1f;
+      color: #ffffff;
+    }
+
+    .word-count-display {
+      background: #2d2d2d;
+      color: #ffffff;
+      border-color: #434343;
+    }
+  }
+
+  // 工具栏模式样式
+  &.toolbar-basic {
+    .ck.ck-toolbar {
+      min-height: 40px;
+    }
+  }
+
+  &.toolbar-full {
+    .ck.ck-toolbar {
+      min-height: 60px;
+    }
+  }
+
+  // 字数统计开启时的样式
+  &.with-word-count {
+    .ck.ck-editor {
+      border-radius: 4px 4px 0 0;
+    }
+  }
+}
+
+/* 自定义对齐工具样式增强 */
+.rich-text-editor {
+  // 自定义对齐按钮样式
+  .ck.ck-alignment-button {
+    min-width: 32px;
+
+    &.ck-on {
+      background-color: #bae7ff;
+      border-color: #40a9ff;
+      color: #1890ff;
+    }
+
+    &:hover:not(.ck-disabled) {
+      background-color: #e6f7ff;
+      border-color: #40a9ff;
+    }
+  }
+
+  // 对齐下拉菜单样式
+  .ck.ck-dropdown {
+    &[class*='customAlignment'] {
+      .ck.ck-dropdown__button {
+        min-width: 36px;
+
+        &.ck-on {
+          background-color: #bae7ff;
+          border-color: #40a9ff;
+          color: #1890ff;
+        }
+      }
+
+      .ck.ck-dropdown__panel {
+        .ck.ck-toolbar {
+          border: none;
+          background: white;
+          padding: 4px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+          .ck-alignment-button {
+            margin: 2px;
+            border-radius: 4px;
+            min-width: 28px;
+            height: 28px;
+
+            &:hover {
+              background-color: #f0f8ff;
+              border-color: #40a9ff;
+            }
+
+            &.ck-on {
+              background-color: #bae7ff;
+              border-color: #40a9ff;
+              color: #1890ff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 编辑器内容区域的自定义对齐样式
+  .ck.ck-editor__main .ck.ck-editor__editable {
+    // 自定义对齐类样式
+    .custom-align-left {
+      text-align: left !important;
+    }
+
+    .custom-align-center {
+      text-align: center !important;
+    }
+
+    .custom-align-right {
+      text-align: right !important;
+    }
+
+    .custom-align-justify {
+      text-align: justify !important;
+    }
+
+    // 表格对齐样式
+    table.custom-align-left {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    table.custom-align-center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    table.custom-align-right {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    // 表格单元格对齐样式
+    td.custom-align-left,
+    th.custom-align-left {
+      text-align: left !important;
+    }
+
+    td.custom-align-center,
+    th.custom-align-center {
+      text-align: center !important;
+    }
+
+    td.custom-align-right,
+    th.custom-align-right {
+      text-align: right !important;
+    }
+
+    td.custom-align-justify,
+    th.custom-align-justify {
+      text-align: justify !important;
+    }
+  }
+}
+
+/* 预览模式的自定义对齐样式 */
+.rich-text-preview {
+  // 自定义对齐类样式
+  .custom-align-left {
+    text-align: left !important;
+  }
+
+  .custom-align-center {
+    text-align: center !important;
+  }
+
+  .custom-align-right {
+    text-align: right !important;
+  }
+
+  .custom-align-justify {
+    text-align: justify !important;
+  }
+
+  // 表格对齐样式
+  table.custom-align-left {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  table.custom-align-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  table.custom-align-right {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  // 表格单元格对齐样式
+  td.custom-align-left,
+  th.custom-align-left {
+    text-align: left !important;
+  }
+
+  td.custom-align-center,
+  th.custom-align-center {
+    text-align: center !important;
+  }
+
+  td.custom-align-right,
+  th.custom-align-right {
+    text-align: right !important;
+  }
+
+  td.custom-align-justify,
+  th.custom-align-justify {
+    text-align: justify !important;
   }
 }
