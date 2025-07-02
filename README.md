@@ -24,6 +24,11 @@ Designable is your perfect choice.
 
 [playground](https://designable.netlify.app)
 
+## Development
+
+- 环境
+  Node: v16.15.1
+
 ## Contributors
 
 This project exists thanks to all the people who contribute.

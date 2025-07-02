@@ -1270,7 +1270,6 @@ export const Editor: React.FC<EditorProps> = (props) => {
   // 设置 Excel 表格粘贴支持
   const setupExcelTablePasteSupport = (editor: any, debug?: boolean) => {
     const view = editor.editing.view
-    const document = view.document
 
     // 监听剪贴板输入事件
     view.document.on(

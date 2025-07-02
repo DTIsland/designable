@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.0-beta.61(2025-04-14)
+
+### No Change Log
+
 ## v1.0.0-beta.60(2025-04-14)
 
 ### :beetle: Bug Fixes
@@ -465,9 +469,3 @@
 ### :beetle: Bug Fixes
 
 1. [fix(react): fix CompositePanel](https://github.com/alibaba/designable/commit/a364532) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.21(2021-10-14)
-
-### :beetle: Bug Fixes
-
-1. [fix(react): fix CompositePanel](https://github.com/alibaba/designable/commit/bf4ba3f) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
