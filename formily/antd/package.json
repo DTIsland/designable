@@ -1,6 +1,6 @@
 {
   "name": "@didesignable/formily-antd",
-  "version": "1.0.0-beta.62",
+  "version": "1.0.0-beta.63",
   "license": "MIT",
   "main": "lib",
   "module": "esm",
@@ -81,11 +81,11 @@
     "@antv/x6-plugin-snapline": "^2.1.7",
     "@ckeditor/ckeditor5-build-classic": "^40.2.0",
     "@ckeditor/ckeditor5-react": "^6.2.0",
-    "@didesignable/core": "1.0.0-beta.62",
-    "@didesignable/formily-setters": "1.0.0-beta.62",
-    "@didesignable/formily-transformer": "1.0.0-beta.62",
-    "@didesignable/react": "1.0.0-beta.62",
-    "@didesignable/react-settings-form": "1.0.0-beta.62",
+    "@didesignable/core": "1.0.0-beta.63",
+    "@didesignable/formily-setters": "1.0.0-beta.63",
+    "@didesignable/formily-transformer": "1.0.0-beta.63",
+    "@didesignable/react": "1.0.0-beta.63",
+    "@didesignable/react-settings-form": "1.0.0-beta.63",
     "dayjs": "^1.11.13"
   },
   "publishConfig": {

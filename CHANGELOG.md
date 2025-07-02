@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0-beta.62(2025-07-02)
+
+### :tada: Enhancements
+
+1. [feat: add richTextEditor](https://github.com/alibaba/designable/commit/aa69b86) :point_right: ( [wewoor](https://github.com/wewoor) )
+
 ## v1.0.0-beta.61(2025-04-14)
 
 ### No Change Log
@@ -463,9 +469,3 @@
 ### :beetle: Bug Fixes
 
 1. [fix(react): fix CompositePanel onChange](https://github.com/alibaba/designable/commit/d928b69) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )
-
-## v1.0.0-beta.22(2021-10-14)
-
-### :beetle: Bug Fixes
-
-1. [fix(react): fix CompositePanel](https://github.com/alibaba/designable/commit/a364532) :point_right: ( [zhili.wzl](https://github.com/zhili.wzl) )

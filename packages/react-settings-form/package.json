@@ -1,6 +1,6 @@
 {
   "name": "@didesignable/react-settings-form",
-  "version": "1.0.0-beta.62",
+  "version": "1.0.0-beta.63",
   "license": "MIT",
   "main": "lib",
   "types": "lib/index.d.ts",
@@ -47,9 +47,9 @@
   },
   "dependencies": {
     "@babel/parser": "^7.14.7",
-    "@didesignable/core": "1.0.0-beta.62",
-    "@didesignable/react": "1.0.0-beta.62",
-    "@didesignable/shared": "1.0.0-beta.62",
+    "@didesignable/core": "1.0.0-beta.63",
+    "@didesignable/react": "1.0.0-beta.63",
+    "@didesignable/shared": "1.0.0-beta.63",
     "@monaco-editor/react": "^4.6.0",
     "monaco-editor": "^0.25.2",
     "prettier": "^2.3.2",

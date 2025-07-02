@@ -1,6 +1,6 @@
 {
   "name": "@didesignable/react",
-  "version": "1.0.0-beta.62",
+  "version": "1.0.0-beta.63",
   "license": "MIT",
   "main": "lib",
   "types": "lib/index.d.ts",
@@ -39,8 +39,8 @@
     "react": "16.x || 17.x"
   },
   "dependencies": {
-    "@didesignable/core": "1.0.0-beta.62",
-    "@didesignable/shared": "1.0.0-beta.62",
+    "@didesignable/core": "1.0.0-beta.63",
+    "@didesignable/shared": "1.0.0-beta.63",
     "dateformat": "^4.5.1"
   },
   "publishConfig": {
